@@ -23,44 +23,5 @@ set showtabline=2					" show buffers in tabline
 set noshowmode						" hide default vim statusline
 set cursorline						" highlight current line
 
-nnoremap <SPACE> <Nop>
 let g:mapleader = " "
 
-" set python paths
-let g:python3_host_prog = '/usr/bin/python3'
-let g:loaded_python_provider = 0
-
-" switch buffers
-nnoremap <TAB> :bnext<CR>
-nnoremap <S-TAB> :bprevious<CR>
-
-" git mappings
-nmap <leader>gb :Gblame<CR>
-nmap <leader>gs :Git<CR>
-nmap <leader>gc :Gcommit<CR>
-nmap <leader>gph :Gpush<CR>
-nmap <leader>gpl :Gpull<CR>
-
-call plug#begin('~/.config/nvim/autoload/plugged')
-	" better syntax support
-	Plug 'sheerun/vim-polyglot'
-	" file exlorer
-	Plug 'scrooloose/NERDTree'
-	" auto closes brackets, perens, quotes
-	Plug 'jiangmiao/auto-pairs'
-	" super 'cool' theme
-	Plug 'arcticicestudio/nord-vim'
-	" status line
-	Plug 'vim-airline/vim-airline'
-	" git integration
-	Plug 'tpope/vim-fugitive'
-call plug#end()
-
-colorscheme nord
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#right_sep = ''
-let g:airline#extensions#tabline#right_alt_sep = ''
-let g:airline_powerline_fonts = 1
