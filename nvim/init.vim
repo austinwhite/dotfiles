@@ -45,5 +45,8 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 call plug#begin()
 
+        Plug 'projekt0n/github-nvim-theme'
 
 call plug#end()
+
+colorscheme github_dark
