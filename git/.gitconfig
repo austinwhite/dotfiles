@@ -1,0 +1,11 @@
+[core]
+	excludesfile = ~/.gitignore
+	editor = nvim
+[alias]
+    d = diff
+    cm = commit
+    co = checkout
+    st = status
+    br = branch
+    ba = branch -a
+    
