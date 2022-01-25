@@ -1,6 +1,10 @@
+[include]
+  path = ~/.gitconfig.local
+
 [core]
 	excludesfile = ~/.gitignore
 	editor = nvim
+    
 [alias]
     d = diff
     cm = commit
@@ -8,4 +12,3 @@
     st = status
     br = branch
     ba = branch -a
-    
