@@ -1,5 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
-export DOTFILES="$HOME/.dotfiles" 
+export DOTFILES="$HOME/.dotfiles"
+export STOWDIRS="alacritty nvim tmux zsh"
 ZSH_THEME="robbyrussell"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
