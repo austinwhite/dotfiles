@@ -27,7 +27,7 @@ return require("packer").startup(function(use)
         end,
     }
 
-    -- add symbols to lsp
+    -- add symbols to completion
     use { "onsails/lspkind-nvim" }
 
     -- completion
