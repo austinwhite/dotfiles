@@ -2,6 +2,10 @@ local execute = vim.api.nvim_command
 local fn = vim.fn
 local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
 
+function get_config(name)
+    return string.format("require(\"config/%s\")", name)
+end
+
 -- bootstrap packer if not isntalled
 if fn.empty(fn.glob(install_path)) > 0 then
     packer_bootstrap = fn.system({
@@ -15,23 +19,31 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require("packer").startup(function(use)
-    
-    -- self managed
+
     use { "wbthomason/packer.nvim" }
 
-    -- theme
     use {
         "projekt0n/github-nvim-theme",
-        require('github-theme').setup()
+        config = get_config("github-theme")
     }
 
-    -- completion plugin
-    use { "hrsh7th/nvim-cmp" } -- completion plugin
-    use { "hrsh7th/cmp-buffer" } -- buffer completions
-    use { "hrsh7th/cmp-path" } -- path completions
-    use { "hrsh7th/cmp-cmdline" } -- cmdline completions
+    use { "onsails/lspkind-nvim" }
 
-    -- set up full configuration if packer isn't installed
+    -- completion
+    use {
+        "hrsh7th/nvim-cmp",
+        requires = {
+            { "hrsh7th/cmp-buffer" },
+            { "hrsh7th/cmp-buffer" },
+            { "hrsh7th/cmp-path" },
+        },
+        config = get_config("completion")
+    }
+
+    -- snippets
+    use { "L3MON4D3/LuaSnip" }
+    use { "rafamadriz/friendly-snippets" }
+
     if packer_bootstrap then
       require("packer").sync()
     end
