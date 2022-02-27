@@ -1,4 +1,6 @@
-require("github-theme").setup({
+local theme = require("github-theme")
+
+theme.setup({
     theme_style = "dark",
     function_style = "italic",
     sidebars = {"qf", "vista_kind", "terminal", "packer"},
