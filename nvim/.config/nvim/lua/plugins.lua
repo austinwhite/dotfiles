@@ -10,7 +10,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
         "--depth", 
         "1", 
         "https://github.com/wbthomason/packer.nvim", 
-        install_path
+        install_path,
     })
 end
 
@@ -27,21 +27,28 @@ return require("packer").startup(function(use)
         end,
     }
 
-    -- add symbols to completion
-    use { "onsails/lspkind-nvim" }
-
     -- completion
     use {
         "hrsh7th/nvim-cmp",
         requires = {
             { "hrsh7th/cmp-buffer" },
-            { "hrsh7th/cmp-buffer" },
             { "hrsh7th/cmp-path" },
+            { "hrsh7th/cmp-nvim-lsp" },
         },
         config = function()
             require("config/completion")
         end,
     }
+
+    -- lsp
+    use {
+        "neovim/nvim-lspconfig",
+        "williamboman/nvim-lsp-installer",
+        config = function()
+            require("config/lsp")
+        end,
+    }
+    use { "onsails/lspkind-nvim" }
 
     -- snippets
     use { "L3MON4D3/LuaSnip" }
