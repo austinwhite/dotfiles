@@ -1,4 +1,0 @@
-#!/bin/bash
-
-git clone https://github.com/austinwhite/backup_bookmarks.git ~/.backup_bookmarks
-
