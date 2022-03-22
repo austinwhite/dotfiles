@@ -1,5 +1,3 @@
-source $ZSH/oh-my-zsh.sh
-
 export ZSH="$HOME/.oh-my-zsh"
 export DOTFILES="$HOME/.dotfiles"
 export STOWDIRS="alacritty nvim tmux zsh git"
@@ -22,3 +20,6 @@ alias sudo='sudo '
 
 # print each PATH entry on a seperate line
 alias path='echo -e ${PATH//:/\\n}'
+
+source $ZSH/oh-my-zsh.sh
+

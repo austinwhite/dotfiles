@@ -3,7 +3,8 @@
 if ! command -v stow $> /dev/null
 then
     echo "command not found: stow"
-    exit 1
+    echo "bootstrapping gnu stow..."
+    sudo apt-get install stow
 fi
 
 if [[ -z "${STOWDIRS}" ]]; then
