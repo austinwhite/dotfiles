@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if ! command -v stow $> /dev/null
 then
@@ -15,7 +15,8 @@ fi
 
 for dir in $dotfile_dirs
 do
-    echo "stow -D $dir"
+    echo "stow $dir"
     stow -D $dir
+    stow $dir
 done
 
