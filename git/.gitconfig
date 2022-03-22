@@ -1,0 +1,7 @@
+[user]
+	name = Austin White
+	email = austinlldb@gmail.com
+[submodule]
+	recurse = true
+[credential]
+	helper = store
