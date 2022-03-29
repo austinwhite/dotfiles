@@ -4,57 +4,41 @@ local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
 
 -- bootstrap packer if not isntalled
 if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({
-        "git", 
-        "clone", 
-        "--depth", 
-        "1", 
-        "https://github.com/wbthomason/packer.nvim", 
-        install_path,
-    })
+  packer_bootstrap = fn.system({
+    "git", 
+    "clone", 
+    "--depth", 
+    "1", 
+    "https://github.com/wbthomason/packer.nvim", 
+    install_path,
+  })
+end
+
+function get_config(name)
+  return string.format("require(\"config/%s\")", name)
 end
 
 return require("packer").startup(function(use)
 
-    -- package manager
-    use { "wbthomason/packer.nvim", opt = true }
+  -- have packer manager itself
+  use { "wbthomason/packer.nvim", opt = true }
 
-    -- theme
-    use {
-        "projekt0n/github-nvim-theme",
-        config = function()
-            require("config/github-theme")
-        end,
-    }
+  -- theme
+  use {
+    "projekt0n/github-nvim-theme",
+    config = get_config("github-theme")
+  }
 
-    -- completion
-    use {
-        "hrsh7th/nvim-cmp",
-        requires = {
-            { "hrsh7th/cmp-buffer" },
-            { "hrsh7th/cmp-path" },
-            { "hrsh7th/cmp-nvim-lsp" },
-        },
-        config = function()
-            require("config/completion")
-        end,
-    }
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+    config = get_config("treesitter")
+  }
 
-    -- lsp
-    use {
-        "neovim/nvim-lspconfig",
-        "williamboman/nvim-lsp-installer",
-        config = function()
-            require("config/lsp")
-        end,
-    }
-    use { "onsails/lspkind-nvim" }
+  use { "p00f/nvim-ts-rainbow" }
 
-    -- snippets
-    use { "L3MON4D3/LuaSnip" }
-    use { "rafamadriz/friendly-snippets" }
+  if packer_bootstrap then
+    require("packer").sync()
+  end
 
-    if packer_bootstrap then
-      require("packer").sync()
-    end
 end)
