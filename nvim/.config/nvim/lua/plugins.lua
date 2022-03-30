@@ -19,7 +19,7 @@ if not status_ok then
   return
 end
 
--- open packer displays as a floating window 
+-- open packer displays as floating windows
 packer.init {
   display = {
     open_fn = function()
@@ -48,31 +48,31 @@ return require("packer").startup(function(use)
   -- treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-    requires = {{ "p00f/nvim-ts-rainbow" }},
     config = get_config("treesitter"),
+    run = ":TSUpdate",
+    requires = { { "p00f/nvim-ts-rainbow" } },
   }
 
   -- completion
   use {
     "hrsh7th/nvim-cmp",
+    config = get_config("completion"),
     requires = {
       { "hrsh7th/cmp-buffer" },
       { "hrsh7th/cmp-path" },
       { "hrsh7th/cmp-cmdline" },
-      { "hrsh7th/cmp-vsnip" },
+      { "saadparwaiz1/cmp_luasnip" },
     },
-    config = get_config("completion"),
   }
 
   -- snippets
-  use { "hrsh7th/vim-vsnip" }
+  use { "L3MON4D3/LuaSnip" }
   use {
     "rafamadriz/friendly-snippets",
-    requires = {{ "hrsh7th/vim-vsnip" }}
+    requires = { { "3MON4D3/LuaSnip" } }
   }
 
-  -- setup configuration if packer was bootstrapped
+  -- run configuration if packer was bootstrapped
   if packer_bootstrap then
     require("packer").sync()
   end
