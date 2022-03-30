@@ -1,8 +1,8 @@
--- Plugin management via Packer
+-- plugin management via packer
 require("plugins")
 
--- Vim mappings
+-- vim mappings
 require("mappings")
 
--- Non plugin vim options
+-- non plugin vim options
 require("options")
