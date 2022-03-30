@@ -8,7 +8,7 @@ if not status_ok then
   return
 end
 
--- allow vscode-like snippets that expost snippets in JSON files
+-- allow vscode-like snippets that expose snippets in JSON files
 -- requried for 'friendly-snippets'
 require("luasnip/loaders/from_vscode").lazy_load()
 
