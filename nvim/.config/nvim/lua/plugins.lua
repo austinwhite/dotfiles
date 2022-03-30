@@ -49,10 +49,27 @@ return require("packer").startup(function(use)
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
-    requires = {
-      { "p00f/nvim-ts-rainbow" },
-    },
+    requires = {{ "p00f/nvim-ts-rainbow" }},
     config = get_config("treesitter"),
+  }
+
+  -- completion
+  use {
+    "hrsh7th/nvim-cmp",
+    requires = {
+      { "hrsh7th/cmp-buffer" },
+      { "hrsh7th/cmp-path" },
+      { "hrsh7th/cmp-cmdline" },
+      { "hrsh7th/cmp-vsnip" },
+    },
+    config = get_config("completion"),
+  }
+
+  -- snippets
+  use { "hrsh7th/vim-vsnip" }
+  use {
+    "rafamadriz/friendly-snippets",
+    requires = {{ "hrsh7th/vim-vsnip" }}
   }
 
   -- setup configuration if packer was bootstrapped
