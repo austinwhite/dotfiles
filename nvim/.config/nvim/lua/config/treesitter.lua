@@ -19,7 +19,7 @@ configs.setup {
   },
   rainbow = {
     enable = true,
-    disable = { "jsx", "cpp" },
+    disable = { "" },
     extended_mode = true,
     max_file_lines = nil,
   }
