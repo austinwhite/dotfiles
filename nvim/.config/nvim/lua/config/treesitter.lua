@@ -22,7 +22,5 @@ configs.setup {
     disable = { "jsx", "cpp" },
     extended_mode = true,
     max_file_lines = nil,
-    -- colors = {}, -- table of hex strings
-    -- termcolors = {} -- table of colour name strings
   }
 }

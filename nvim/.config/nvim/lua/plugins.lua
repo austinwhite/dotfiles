@@ -1,8 +1,7 @@
-local execute = vim.api.nvim_command
 local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
 
--- bootstrap packer if not isntalled
+-- bootstrap packer if not found
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({
     "git", 
@@ -14,15 +13,13 @@ if fn.empty(fn.glob(install_path)) > 0 then
   })
 end
 
-function get_config(name)
-  return string.format("require(\"config/%s\")", name)
-end
-
+-- dont continue if packer isn't installed and bootstrapping failed
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
   return
 end
 
+-- open packer displays as a floating window 
 packer.init {
   display = {
     open_fn = function()
@@ -31,6 +28,12 @@ packer.init {
   },
 }
 
+-- get require statement for a given config
+function get_config(name)
+  return string.format("require(\"config/%s\")", name)
+end
+
+-- plugins
 return require("packer").startup(function(use)
 
   -- have packer manager itself
@@ -39,18 +42,20 @@ return require("packer").startup(function(use)
   -- theme
   use {
     "projekt0n/github-nvim-theme",
-    config = get_config("github-theme")
+    config = get_config("github-theme"),
   }
   
   -- treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
-    config = get_config("treesitter")
+    requires = {
+      { "p00f/nvim-ts-rainbow" },
+    },
+    config = get_config("treesitter"),
   }
-  use { "p00f/nvim-ts-rainbow" }
 
-  -- setup configuration if bootstrapped
+  -- setup configuration if packer was bootstrapped
   if packer_bootstrap then
     require("packer").sync()
   end
