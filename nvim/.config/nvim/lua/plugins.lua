@@ -4,11 +4,11 @@ local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
 -- bootstrap packer if not found
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({
-    "git", 
-    "clone", 
-    "--depth", 
-    "1", 
-    "https://github.com/wbthomason/packer.nvim", 
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "https://github.com/wbthomason/packer.nvim",
     install_path,
   })
 end
@@ -44,7 +44,7 @@ return require("packer").startup(function(use)
     "projekt0n/github-nvim-theme",
     config = get_config("github-theme"),
   }
-  
+
   -- treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -58,6 +58,7 @@ return require("packer").startup(function(use)
     "hrsh7th/nvim-cmp",
     config = get_config("completion"),
     requires = {
+      { "hrsh7th/cmp-nvim-lsp" },
       { "hrsh7th/cmp-buffer" },
       { "hrsh7th/cmp-path" },
       { "hrsh7th/cmp-cmdline" },
@@ -69,7 +70,14 @@ return require("packer").startup(function(use)
   use { "L3MON4D3/LuaSnip" }
   use {
     "rafamadriz/friendly-snippets",
-    requires = { { "3MON4D3/LuaSnip" } }
+    requires = { { "3MON4D3/LuaSnip" } },
+  }
+
+  -- lsp
+  use {
+    "neovim/nvim-lspconfig",
+    requires = { { "williamboman/nvim-lsp-installer" } },
+    config = get_config("lsp"),
   }
 
   -- run configuration if packer was bootstrapped
