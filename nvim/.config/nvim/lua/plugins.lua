@@ -92,6 +92,12 @@ return require("packer").startup(function(use)
     config = get_config("telescope"),
   }
 
+  -- terminal
+  use {
+    "akinsho/toggleterm.nvim",
+    config = get_config("toggleterm"),
+  }
+
   -- run configuration if packer was bootstrapped
   if packer_bootstrap then
     require("packer").sync()
