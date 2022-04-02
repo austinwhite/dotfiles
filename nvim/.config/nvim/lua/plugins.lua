@@ -80,6 +80,18 @@ return require("packer").startup(function(use)
     config = get_config("lsp"),
   }
 
+
+  -- telescope
+  use {
+    "nvim-telescope/telescope.nvim",
+    requires = {
+        { "nvim-lua/plenary.nvim" },
+        { "nvim-lua/popup.nvim" },
+        { "nvim-telescope/telescope-media-files.nvim" },
+    },
+    config = get_config("telescope"),
+  }
+
   -- run configuration if packer was bootstrapped
   if packer_bootstrap then
     require("packer").sync()
