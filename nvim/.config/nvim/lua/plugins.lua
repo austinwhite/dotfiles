@@ -53,6 +53,12 @@ return require("packer").startup(function(use)
     requires = { { "p00f/nvim-ts-rainbow" } },
   }
 
+  -- autoclose brackets and quotes
+  use {
+    "windwp/nvim-autopairs",
+    config = get_config("autopairs"),
+  }
+
   -- completion
   use {
     "hrsh7th/nvim-cmp",
@@ -87,6 +93,7 @@ return require("packer").startup(function(use)
         { "nvim-lua/plenary.nvim" },
         { "nvim-lua/popup.nvim" },
         { "nvim-telescope/telescope-media-files.nvim" },
+        { "nvim-telescope/telescope-file-browser.nvim" },
     },
     config = get_config("telescope"),
   }
