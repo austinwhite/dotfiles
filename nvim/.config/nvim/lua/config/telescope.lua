@@ -3,15 +3,16 @@ if not status_ok then
   return
 end
 
-telescope.load_extension("media_files")
-
 local actions = require "telescope.actions"
+local icons = require("config.icons")
+
+telescope.load_extension("media_files")
 
 telescope.setup {
   defaults = {
 
-    prompt_prefix = " ",
-    selection_caret = " ",
+    prompt_prefix = icons.ui.Search,
+    selection_caret = icons.ui.Select,
     path_display = { "smart" },
 
     mappings = {

@@ -21,6 +21,7 @@ opt.scrolloff = 8                                   -- keep 8 rows visible while
 opt.sidescrolloff = 5                               -- keep 5 columns visible while side scrolling
 opt.undofile = true                                 -- store unfo info in a file
 opt.undodir = fn.stdpath('config')..'/undo'         -- where to store undo fileh
+opt.termguicolors = true                            -- true color
 wo.colorcolumn = "80"                               -- highlight the 80th column
 wo.cursorline = true                                -- highlight line where cursor is
 wo.signcolumn = "yes"                               -- show sugn column at all times

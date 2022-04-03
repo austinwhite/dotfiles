@@ -80,7 +80,6 @@ return require("packer").startup(function(use)
     config = get_config("lsp"),
   }
 
-
   -- telescope
   use {
     "nvim-telescope/telescope.nvim",
