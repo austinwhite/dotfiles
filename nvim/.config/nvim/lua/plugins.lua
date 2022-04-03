@@ -104,6 +104,12 @@ return require("packer").startup(function(use)
     config = get_config("toggleterm"),
   }
 
+  -- status line
+  use {
+    "nvim-lualine/lualine.nvim",
+    config = get_config("lualine"),
+  }
+
   -- run configuration if packer was bootstrapped
   if packer_bootstrap then
     require("packer").sync()
