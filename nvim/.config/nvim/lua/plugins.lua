@@ -41,8 +41,8 @@ return require("packer").startup(function(use)
 
   -- theme
   use {
-    "projekt0n/github-nvim-theme",
-    config = get_config("github-theme"),
+    "shaunsingh/nord.nvim",
+    config = function() require("nord").set() end,
   }
 
   -- treesitter
