@@ -19,3 +19,5 @@ alias sudo='sudo '
 # print each PATH entry on a seperate line
 alias path='echo -e ${PATH//:/\\n}'
 
+# tmux should use config in ~/.config/tmux
+alias tmux='tmux -f $HOME/.config/tmux/.tmux.conf'
