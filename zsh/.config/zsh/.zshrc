@@ -1,6 +1,5 @@
 export DOTFILES="$HOME/.dotfiles"
 export STOWDIRS="alacritty nvim tmux zsh git env"
-export LESS="-RFX"
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 

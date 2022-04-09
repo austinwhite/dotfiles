@@ -21,4 +21,3 @@
     reset = reset --soft HEAD~1
 [core]
     editor = nvim
-    pager = less -F -X
