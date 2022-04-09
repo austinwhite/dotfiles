@@ -15,6 +15,7 @@ fi
 
 for dir in $dotfile_dirs
 do
+    cd ${DOTFILES}
     echo "stow -D $dir"
     stow -D $dir
 done
