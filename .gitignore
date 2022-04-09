@@ -1,3 +1,7 @@
 nvim/.config/nvim/plugin
-undo/
+nvim/.config/nvim/undo
+
 zsh/.config/zsh/.zcompdump*
+zsh/.config/zsh/plugins/
+
+*tmux*.log
