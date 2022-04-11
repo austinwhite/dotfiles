@@ -1,23 +1,38 @@
-export DOTFILES="$HOME/.dotfiles"
-export STOWDIRS="alacritty nvim tmux zsh git env"
-# Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
+HISTFILE=$HOME/.zsh_history
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# options (man zshoptions)
+setopt appendhistory
+setopt autocd extendedglob nomatch menucomplete
+setopt interactive_comments
+unsetopt BEEP
 
-ZSH_THEME="robbyrussell"
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
 
-plugins=(git)
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
 
-alias vim=nvim
+autoload -Uz colors && colors
 
-# enable sudo for aliases
-alias sudo='sudo '
+source "$ZDOTDIR/zsh-functions"
 
-# print each PATH entry on a seperate line
-alias path='echo -e ${PATH//:/\\n}'
+zsh_add_file "zsh-exports"
+zsh_add_file "zsh-vim-mode"
+zsh_add_file "zsh-aliases"
+zsh_add_file "zsh-prompt"
+zsh_add_file "zsh-vim-mode"
 
-# tmux should use config in ~/.config/tmux
-alias tmux='tmux -f $HOME/.config/tmux/.tmux.conf'
+# plugins
+zsh_add_plugin "zsh-users/zsh-autosuggestions"
+zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+zsh_add_plugin "hlissner/zsh-autopair"
+
+bindkey "^p" up-line-or-beginning-search # Up
+bindkey "^n" down-line-or-beginning-search # Down
+bindkey "^k" up-line-or-beginning-search # Up
+bindkey "^j" down-line-or-beginning-search # Down
+
+# TODO: FZF, zoxide
