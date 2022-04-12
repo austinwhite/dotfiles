@@ -21,3 +21,20 @@
     reset = reset --soft HEAD~1
 [core]
     editor = nvim
+[color]
+	ui = auto
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red
+	new = green
+[init]
+	defaultBranch = ma
