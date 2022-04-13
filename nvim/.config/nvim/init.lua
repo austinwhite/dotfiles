@@ -6,3 +6,6 @@ require("mappings")
 
 -- non plugin vim options
 require("options")
+
+-- auto commands
+require("autocmds")
