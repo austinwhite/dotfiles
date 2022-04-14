@@ -1,7 +1,11 @@
 HISTFILE=$HOME/.zsh_history
+HISTSIZE=5000
+SAVEHIST=5000
 
 # options (man zshoptions)
 setopt appendhistory
+setopt sharehistory
+setopt incappendhistory
 setopt autocd extendedglob nomatch menucomplete
 setopt interactive_comments
 unsetopt BEEP
