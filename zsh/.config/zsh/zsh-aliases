@@ -15,8 +15,18 @@ alias ls='ls --color=auto'
 alias la='ls -a --color=auto'
 alias ll='ls -l --color=auto'
 alias lla='ls -la --color=auto'
+alias llrt='ls -lrt --color=auto'
 
-# cd
+# quicker navigation 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ~='cd ~'
+alias -- -='cd -'
+
+# shortcuts
+alias g='git'
+
+# colorize grep
+alias grep='grep --color=auto'

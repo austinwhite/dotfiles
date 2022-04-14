@@ -1,3 +1,18 @@
+# create a new directory and enter it
+function mkd() {
+  mkdir -p "$@" && cd "$_";
+}
+
+# update everything (apt-get)
+function update_all() {
+  sudo apt-get update
+  sudo apt-get upgrade -y
+  sudo apt-get full-upgrade -y
+  sudo apt-get dist-upgrade -y
+  sudo apt-get autoremove -y
+  sudo apt-get autoclean -y
+}
+
 # function to source files if they exist
 function zsh_add_file() {
   [ -f "$ZDOTDIR/$1" ] && source "$ZDOTDIR/$1"
