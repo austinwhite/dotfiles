@@ -11,7 +11,7 @@ telescope.load_extension("media_files")
 telescope.setup {
   defaults = {
 
-    prompt_prefix = icons.ui.Search,
+    prompt_prefix = icons.ui.Search .. " ",
     selection_caret = icons.ui.Select,
     path_display = { "smart" },
 
@@ -80,14 +80,25 @@ telescope.setup {
       },
     },
   },
+
   pickers = {
+    find_files = {
+      theme = "dropdown",
+      previewer = false,
+    }
   },
+
   extensions = {
     media_files = {
-        filetypes = {"png", "webp", "jpg", "jpeg"},
-        find_cmd = "rg"
-      }
+      filetypes = {"png", "webp", "jpg", "jpeg"},
+      find_cmd = "rg"
+    },
+    file_browser = {
+      theme = "dropdown",
+      -- open in normal mode
+      on_complete = { function() vim.cmd"stopinsert" end },
+    }
   },
 }
 
-require("telescope").load_extension "file_browser"
+require("telescope").load_extension("file_browser")
