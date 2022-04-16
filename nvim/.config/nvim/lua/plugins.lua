@@ -42,7 +42,7 @@ return require("packer").startup(function(use)
   -- theme
   use {
     "shaunsingh/nord.nvim",
-    config = function() require("nord").set() end,
+    config = get_config("nord"),
   }
 
   -- treesitter
@@ -73,7 +73,10 @@ return require("packer").startup(function(use)
   }
 
   -- snippets
-  use { "L3MON4D3/LuaSnip" }
+  use {
+    "L3MON4D3/LuaSnip",
+    config = get_config("luasnip"),
+  }
   use {
     "rafamadriz/friendly-snippets",
     requires = { { "3MON4D3/LuaSnip" } },
