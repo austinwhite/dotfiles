@@ -6,6 +6,7 @@ end
 require("config.lsp.lsp-installer")
 require("config.lsp.handlers").setup()
 
+-- add a border for the ':LspInfo' window
 local win = require('lspconfig.ui.windows')
 local _default_opts = win.default_opts
 
