@@ -37,4 +37,4 @@
     old = red
     new = green
 [init]
-	defaultbranch = main
+    defaultbranch = main
