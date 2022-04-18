@@ -29,7 +29,7 @@ packer.init {
 }
 
 -- get require statement for a given config
-function get_config(name)
+local function get_config(name)
   return string.format("require(\"config/%s\")", name)
 end
 
@@ -111,6 +111,11 @@ return require("packer").startup(function(use)
   use {
     "nvim-lualine/lualine.nvim",
     config = get_config("lualine"),
+  }
+
+  use {
+    'goolord/alpha-nvim',
+    config = get_config("alpha"),
   }
 
   -- run configuration if packer was bootstrapped
