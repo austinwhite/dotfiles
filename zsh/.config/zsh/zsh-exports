@@ -1,6 +1,9 @@
 # my config files repo path
 export DOTFILES="$HOME/.dotfiles"
 
+# nvim config
+export NVIMCONFIG="$XDG_CONFIG_HOME/nvim/"
+
 # the directories in $DOTFILES that stow will manage 
 export STOWDIRS="alacritty nvim tmux zsh git env"
 
