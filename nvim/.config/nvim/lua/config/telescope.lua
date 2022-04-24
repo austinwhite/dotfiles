@@ -95,8 +95,6 @@ telescope.setup {
     },
     file_browser = {
       theme = "dropdown",
-      -- open in normal mode
-      on_complete = { function() vim.cmd"stopinsert" end },
     }
   },
 }

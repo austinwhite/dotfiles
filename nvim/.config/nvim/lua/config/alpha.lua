@@ -11,9 +11,9 @@ local dashboard = require("alpha.themes.dashboard")
 -- Set menu
 dashboard.section.buttons.val = {
   dashboard.button( "e", "  New" , ":ene <BAR> startinsert<CR>"),
-  dashboard.button( "f", "  Find", ":cd $HOME/Code | Telescope find_files<CR>"),
+  dashboard.button( "f", "  Find", ":Telescope find_files<CR>"),
   dashboard.button( "r", "  Recent" , ":Telescope oldfiles<CR>"),
-  dashboard.button( "s", "  Config", ":cd $NVIMCONFIG | Telescope file_browser<CR>"),
+  dashboard.button( "c", "  Config", ":cd $NVIMCONFIG | Telescope file_browser<CR>"),
   dashboard.button( "q", "  Quit", ":qa<CR>"),
 }
 

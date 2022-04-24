@@ -3,6 +3,10 @@ if not status_ok then
   return
 end
 
--- for .js files also load html and react snipets
-luasnip.filetype_extend("javascript", { "javascriptreact" })
+-- add html snips to js/jsx
+luasnip.filetype_extend("javascriptreact", { "html" })
 luasnip.filetype_extend("javascript", { "html" })
+
+-- add html snips to ts/tsx 
+luasnip.filetype_extend("typecriptreact", { "html" })
+luasnip.filetype_extend("typecript", { "html" })
