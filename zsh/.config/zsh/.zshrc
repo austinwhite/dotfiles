@@ -11,6 +11,7 @@ setopt interactive_comments
 unsetopt BEEP
 
 autoload -Uz compinit
+compinit -i
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 
