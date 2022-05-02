@@ -1,5 +1,8 @@
-# use neovim instead
+# shortcuts
+alias v=nvim
 alias vim=nvim
+alias projects='cd $HOME/Code'
+alias dots='cd $HOME/.dotfiles/'
 
 # enable sudo for aliases
 alias sudo='sudo '

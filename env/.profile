@@ -1,3 +1,7 @@
+# TODO: This doesn't work as expected. without stowing $DOTFILES/env first,
+# I cant use whats in here (STOWDIRS, DOTFILES). after I do that manually I 
+# can't stow everything else without removing ~/.local/bin or it causes conflicts w/ stow
+
 # create bin and add to path
 if [ ! -d "$HOME/.local/bin" ]; then
   mkdir -p $HOME/.local/bin
