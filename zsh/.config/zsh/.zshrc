@@ -39,5 +39,6 @@ bindkey "^p" up-line-or-beginning-search # Up
 bindkey "^n" down-line-or-beginning-search # Down
 bindkey "^k" up-line-or-beginning-search # Up
 bindkey "^j" down-line-or-beginning-search # Down
+bindkey '^H' backward-kill-word # ctrl+backspace, delete previous word
 
 # TODO: FZF, zoxide

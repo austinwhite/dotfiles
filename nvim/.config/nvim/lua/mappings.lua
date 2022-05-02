@@ -15,8 +15,9 @@ keymap("n", "<C-b>", "<cmd>Telescope file_browser<CR>", opts)
 keymap("n", "<C-h>", "<cmd>Telescope help_tags<CR>", opts)
 
 -- buffers
-keymap("n", "<TAB>", ":bnext<CR>", opts)
-keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
+keymap("n", "<TAB>", "<cmd>:bnext<CR>", opts)
+keymap("n", "<S-TAB>", "<cmd>:bprevious<CR>", opts)
+keymap("n", "<leader>bd", "<cmd>:bd<CR>", opts)
 
 -- resizing panes
 keymap("n", "<Left>", ":vertical resize +1<CR>", opts)
