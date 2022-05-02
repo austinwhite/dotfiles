@@ -4,4 +4,6 @@ nvim/.config/nvim/undo
 zsh/.config/zsh/.zcompdump*
 zsh/.config/zsh/plugins/
 
+scripts/.local/bin/appimages
+
 *tmux*.log
