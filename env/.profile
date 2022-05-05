@@ -5,14 +5,16 @@
 # create bin and add to path
 if [ ! -d "$HOME/.local/bin" ]; then
   mkdir -p $HOME/.local/bin
-  export PATH="$HOME/.local/bin:$PATH"
 fi
+
+export PATH="$HOME/.local/bin:$PATH"
 
 # create appimages dir
 if [ ! -d "$HOME/.local/bin/appimages" ]; then
   mkdir -p $HOME/.local/bin/appimages
-  export PATH="$HOME/.local/bin/appimages:$PATH"
 fi
+
+export PATH="$HOME/.local/bin/appimages:$PATH"
 
 # environment variables set everywhere
 export EDITOR="nvim"
