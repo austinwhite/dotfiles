@@ -21,7 +21,7 @@ export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="brave"
 export DOTFILES="$HOME/.dotfiles"
-export STOWDIRS="alacritty nvim tmux zsh git env scripts"
+export STOWDIRS="alacritty nvim tmux zsh git env scripts conda"
 
 # XDG Paths
 export XDG_CONFIG_HOME=$HOME/.config
