@@ -1,6 +1,9 @@
 # nvim config
 export NVIMCONFIG="$XDG_CONFIG_HOME/nvim/"
 
+# PATH
+export PATH="$HOME/anaconda3/bin:$PATH"
+
 # node version manager
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
