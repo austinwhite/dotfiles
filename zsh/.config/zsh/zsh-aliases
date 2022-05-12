@@ -1,6 +1,7 @@
 # shortcuts
-alias v=nvim
-alias vim=nvim
+alias v='nvim'
+alias g='git'
+alias vim='nvim'
 alias projects='cd $HOME/Code'
 alias dots='cd $HOME/.dotfiles/'
 
@@ -27,9 +28,6 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ~='cd ~'
 alias -- -='cd -'
-
-# shortcuts
-alias g='git'
 
 # colorize grep
 alias grep='grep --color=auto'
