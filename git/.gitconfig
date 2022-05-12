@@ -21,6 +21,7 @@
     reset = reset --soft HEAD~1
 [core]
     editor = nvim
+    excludesfile = /home/austin/.config/git/.global-gitignore
 [color]
     ui = auto
 [color "status"]

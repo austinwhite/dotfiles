@@ -1,5 +1,6 @@
 # nvim config
-export NVIMCONFIG="$XDG_CONFIG_HOME/nvim/"
+export NVIMCONFIG="$XDG_CONFIG_HOME/nvim"
+export CONDARC="$XDG_CONFIG_HOME/conda"
 
 # PATH
 export PATH="$HOME/anaconda3/bin:$PATH"
