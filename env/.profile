@@ -20,6 +20,7 @@ export PATH="$HOME/.local/bin/appimages:$PATH"
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="brave"
+export SHELL="/bin/zsh"
 export DOTFILES="$HOME/.dotfiles"
 export STOWDIRS="alacritty nvim tmux zsh git env scripts conda"
 
