@@ -39,3 +39,5 @@
     new = green
 [init]
     defaultbranch = main
+[pull]
+	rebase = false
