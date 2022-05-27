@@ -29,15 +29,3 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_RUNTIME_DIR=$HOME/.xdg
-
-# install nvim if not installed
-appimagesPath=$HOME/.local/bin/appimages
-nvimImage="https://github.com/neovim/neovim/releases/latest/download/nvim.appimage"
-if [ ! -f "$appimagesPath/nvim" ]; then
-  (
-    cd "$appimagesPath"
-    curl -LOs $nvimImage > /dev/null
-    chmod u+x nvim.appimage
-    mv nvim.appimage nvim
-  )
-fi
