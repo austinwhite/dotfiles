@@ -9,20 +9,18 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 
-# create appimages dir
-if [ ! -d "$HOME/.local/bin/appimages" ]; then
-  mkdir -p $HOME/.local/bin/appimages
+# create projects dir 
+if [ ! -d "$HOME/Code" ]; then
+  mkdir $HOME/Code
 fi
-
-export PATH="$HOME/.local/bin/appimages:$PATH"
 
 # environment variables set everywhere
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="brave"
-export SHELL="/bin/zsh"
+export SHELL="/usr/bin/zsh"
 export DOTFILES="$HOME/.dotfiles"
-export STOWDIRS="alacritty nvim zsh git env scripts"
+export STOWDIRS="alacritty nvim zsh git x scripts"
 
 # XDG Paths
 export XDG_CONFIG_HOME=$HOME/.config
