@@ -20,10 +20,18 @@ export TERMINAL="alacritty"
 export BROWSER="brave"
 export SHELL="/usr/bin/zsh"
 export DOTFILES="$HOME/.dotfiles"
-export STOWDIRS="alacritty nvim zsh git x scripts"
+export STOWDIRS="alacritty nvim zsh git x scripts polybar i3"
 
 # XDG Paths
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_RUNTIME_DIR=$HOME/.xdg
+
+# set desktop wallpaper
+~/.fehbg &
+
+# audio
+/usr/bin/pipewire &
+/usr/bin/pipewire-pulse &
+/usr/bin/pipewire-media-session &
