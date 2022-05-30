@@ -6,3 +6,9 @@ XF86MonBrightnessDown
 
 super + shift + r
     killall sxhkd && sxhkd &
+
+super + p
+    rofi -show power-menu -modi power-menu:$HOME/.config/rofi/scripts/rofi-power-menu
+
+super + d
+    rofi -modi drun, run -show drun
