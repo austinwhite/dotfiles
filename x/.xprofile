@@ -20,7 +20,7 @@ export TERMINAL="alacritty"
 export BROWSER="brave"
 export SHELL="/usr/bin/zsh"
 export DOTFILES="$HOME/.dotfiles"
-export STOWDIRS="alacritty nvim zsh git x scripts polybar i3 sxhkd"
+export STOWDIRS="alacritty nvim zsh git x scripts polybar i3 sxhkd rofi"
 
 # XDG Paths
 export XDG_CONFIG_HOME=$HOME/.config
