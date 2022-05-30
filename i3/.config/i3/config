@@ -11,11 +11,22 @@
 
 set $mod Mod4
 
+# Window borders
+smart_borders on
+gaps inner 0
+gaps outer 0
+
+# Color settings
+client.focused #D8DEE9 #D8DEE9 #000088 #D8DEE9
+client.focused_inactive #2C2C2C #2C2C2C #ffffff #2C2C2C
+client.unfocused #2C2C2C #2C2C2C #ffffff #2C2C2C
+client.urgent #00C1FF #00C1FF #000088 #00C1FF
+
+# Do not follow the mouse
+focus_follows_mouse no
+
 default_border pixel 1
 default_floating_border pixel 1
-
-gaps inner 3
-gaps outer 0
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -36,7 +47,7 @@ exec --no-startup-id dunst
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -53,10 +64,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+t exec alacritty 
+bindsym $mod+t exec --no-startup-id alacritty 
 
 # open browser
-bindsym $mod+b exec brave 
+bindsym $mod+b exec --no-startup-id brave 
 
 # kill focused window
 bindsym $mod+q kill
@@ -70,7 +81,7 @@ bindsym $mod+q kill
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # lockscreen
-bindsym $mod+shift+x exec betterlockscreen -l
+bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l
 
 # change focus
 bindsym $mod+h focus left
@@ -164,7 +175,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
