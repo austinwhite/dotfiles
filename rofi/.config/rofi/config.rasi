@@ -1,0 +1,12 @@
+configuration {
+ modi: "window,drun,ssh,combi";
+ font: "FiraCode Nerd Font Mono 10";
+ combi-modi: "window,drun,ssh";
+ }
+//@theme "solarized"
+//@theme "/home/austin/.config/rofi/themes/nord-twoLines.rasi"
+//@theme "/home/austin/.config/rofi/themes/nord-oneline.rasi"
+//@theme "/home/austin/.config/rofi/themes/nord-twoLines.rasi"
+//@theme "/home/austin/.config/rofi/themes/nord-oneline.rasi"
+//@theme "/home/austin/.config/rofi/themes/nord-twoLines.rasi"
+@theme "/home/austin/.config/rofi/themes/nord-oneline.rasi"
