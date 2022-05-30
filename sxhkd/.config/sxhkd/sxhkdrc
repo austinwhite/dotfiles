@@ -1,0 +1,8 @@
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+XF86MonBrightnessDown
+    xbacklight -dec 10
+
+super + shift + r
+    killall sxhkd && sxhkd &
