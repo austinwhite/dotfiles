@@ -1,6 +1,5 @@
 # nvim config
 export NVIMCONFIG="$XDG_CONFIG_HOME/nvim"
-export CONDARC="$XDG_CONFIG_HOME/conda"
 
 # PATH
 export PATH="$HOME/miniconda3/bin:$PATH"

@@ -28,6 +28,9 @@ export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_RUNTIME_DIR=$HOME/.xdg
 
+# global java home
+export JAVA_HOME="/usr/lib/jvm/java-18-openjdk"
+
 # set desktop wallpaper
 ~/.fehbg &
 
