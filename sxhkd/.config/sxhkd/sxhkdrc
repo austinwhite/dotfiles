@@ -12,3 +12,12 @@ super + p
 
 super + d
     rofi -modi drun, run -show drun
+
+super + alt + ctrl + 1
+    just-laptop.sh
+
+super + alt + ctrl + 2
+    just-external.sh
+
+super + alt + ctrl + 3
+    both-monitors.sh
