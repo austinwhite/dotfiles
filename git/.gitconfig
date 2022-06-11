@@ -19,6 +19,7 @@
     amend = commit --amend --reuse-message=HEAD
     unstage = reset HEAD --
     reset = reset --soft HEAD~1
+    d = diff
 [core]
     editor = nvim
     excludesfile = /home/austin/.config/git/.global-gitignore
@@ -40,4 +41,4 @@
 [init]
     defaultbranch = main
 [pull]
-	rebase = false
+    rebase = false
