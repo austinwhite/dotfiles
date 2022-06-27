@@ -19,7 +19,7 @@
     amend = commit --amend --reuse-message=HEAD
     unstage = reset HEAD --
     reset = reset --soft HEAD~1
-    d = diff
+    df = diff
 [core]
     editor = nvim
     excludesfile = /home/austin/.config/git/.global-gitignore
