@@ -17,7 +17,7 @@ super + f
     exec alacritty -e ranger
 
 super + shift + x
-    exec betterlockscreen -l
+    exec lock-screen.sh
 
 super + p
     rofi -show power-menu -modi power-menu:$HOME/.config/rofi/scripts/rofi-power-menu
@@ -26,10 +26,10 @@ super + d
     rofi -modi drun, run -show drun
 
 super + alt + ctrl + 1
-    just-laptop.sh
+    exec just-laptop.sh
 
 super + alt + ctrl + 2
-    just-external.sh
+    exec just-external.sh
 
 super + alt + ctrl + 3
-    both-monitors.sh
+    exec both-monitors.sh
