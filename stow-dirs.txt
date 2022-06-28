@@ -1,0 +1,1 @@
+alacritty nvim zsh git x scripts polybar i3 sxhkd rofi picom
