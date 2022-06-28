@@ -24,13 +24,13 @@ export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_RUNTIME_DIR=$HOME/.xdg
 
-# set desktop wallpaper
-~/.fehbg &
-
 # audio
 /usr/bin/pipewire &
 /usr/bin/pipewire-pulse &
 /usr/bin/pipewire-media-session &
+
+# set desktop wallpaper
+~/.fehbg &
 
 # hot key daemon
 sxhkd &
