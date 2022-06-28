@@ -7,6 +7,18 @@ XF86MonBrightnessDown
 super + shift + r
     killall sxhkd && sxhkd &
 
+super + t
+    exec alacritty
+
+super + b
+    exec brave
+
+super + f
+    exec alacritty -e ranger
+
+super + shift + x
+    exec betterlockscreen -l
+
 super + p
     rofi -show power-menu -modi power-menu:$HOME/.config/rofi/scripts/rofi-power-menu
 
