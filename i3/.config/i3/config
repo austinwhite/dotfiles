@@ -1,30 +1,31 @@
 # set mod to super key
 set $mod Mod4
 
-# Window borders
-smart_borders on
-gaps inner 0
+# window borders
+gaps inner 8
 gaps outer 0
 
-# Do not follow the mouse
+# do not follow the mouse
 focus_follows_mouse no
 
-# Font for window titles
+# font for window titles
 font pango:monospace 8
 
-# Color settings
-client.focused #D8DEE9 #D8DEE9 #000088 #D8DEE9
-client.focused_inactive #2C2C2C #2C2C2C #ffffff #2C2C2C
-client.unfocused #2C2C2C #2C2C2C #ffffff #2C2C2C
+# Window borders
+default_border pixel 1
+smart_borders on
+smart_gaps on
+
+# color settings
+client.focused #939799 #939799 #939799 #939799
+client.focused_inactive #2C2C2C #2C2C2C #FFFFFF #2C2C2C
+client.unfocused #000000 #000000 #000000 #000000
 client.urgent #00C1FF #00C1FF #000088 #00C1FF
 
-# Window border size
-default_border pixel 1
-default_floating_border pixel 1
-
-# Start XDG autostart .desktop files using dex.
+# start XDG autostart .desktop files using dex.
 exec --no-startup-id dex --autostart --environment i3
 
+# start notification manager
 exec --no-startup-id dunst
 
 # Screen lock
@@ -33,14 +34,14 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l --nof
 # Netowrk manager applet
 exec --no-startup-id nm-applet
 
-# Use pactl to adjust volume in PulseAudio.
+# use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# Use Mouse+$mod to drag floating windows t
+# use Mouse+$mod to drag floating windows t
 floating_modifier $mod
 
 # start a terminal
