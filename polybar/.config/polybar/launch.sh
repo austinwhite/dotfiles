@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# terminate already running bar instances
+# terminate all current instances
 killall -q polybar
 
-# wait until the process have ben shut disown
+# wait until all process have been shutdown
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # launch bar
