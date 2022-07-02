@@ -7,6 +7,6 @@ end
 luasnip.filetype_extend("javascriptreact", { "html" })
 luasnip.filetype_extend("javascript", { "html" })
 
--- add html snips to ts/tsx 
-luasnip.filetype_extend("typecriptreact", { "html" })
-luasnip.filetype_extend("typecript", { "html" })
+-- add html snips to ts/tsx
+luasnip.filetype_extend("typescriptreact", { "html" })
+luasnip.filetype_extend("typescript", { "html" })
