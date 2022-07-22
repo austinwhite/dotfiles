@@ -17,7 +17,7 @@ smart_borders on
 smart_gaps on
 
 # color settings
-client.focused #939799 #939799 #939799 #939799
+client.focused #A3BE8C #A3BE8C #A3BE8C #A3BE8C
 client.focused_inactive #2C2C2C #2C2C2C #FFFFFF #2C2C2C
 client.unfocused #000000 #000000 #000000 #000000
 client.urgent #00C1FF #00C1FF #000088 #00C1FF
