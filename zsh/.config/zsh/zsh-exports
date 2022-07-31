@@ -1,10 +1,17 @@
 # nvim config
 export NVIMCONFIG="$XDG_CONFIG_HOME/nvim"
 
+# deno
+export DENO_INSTALL="/home/austin/.deno"
+
 # PATH
-export PATH="$HOME/miniconda3/bin:/var/lib/snapd/snap/bin:$PATH"
+export PATH="$HOME/miniconda3/bin:$PATH"        # conda
+export PATH="/var/lib/snapd/snap/bin:$PATH"     # snap packages
+export PATH="$DENO_INSTALL/bin:$PATH"           # deno
 
 # node version manager
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# deno
