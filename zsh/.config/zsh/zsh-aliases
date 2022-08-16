@@ -33,5 +33,5 @@ alias -- -='cd -'
 alias grep='grep --color=auto'
 
 # copy output and paste
-alias c="xclip"
-alias v="xclip -o"
+alias xc="xclip"
+alias xv="xclip -o"
