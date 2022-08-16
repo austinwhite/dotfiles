@@ -31,3 +31,7 @@ alias -- -='cd -'
 
 # colorize grep
 alias grep='grep --color=auto'
+
+# copy output and paste
+alias c="xclip"
+alias v="xclip -o"
