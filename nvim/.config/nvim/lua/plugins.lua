@@ -40,9 +40,14 @@ return require("packer").startup(function(use)
   use { "wbthomason/packer.nvim" }
 
   -- theme
+  -- use {
+  --  "shaunsingh/nord.nvim",
+  --   config = get_config("nord"),
+  -- }
   use {
-    "shaunsingh/nord.nvim",
-    config = get_config("nord"),
+    "EdenEast/nightfox.nvim",
+    config = get_config("nightfox"),
+    run = ":NightfoxCompile",
   }
 
   -- treesitter
