@@ -60,11 +60,11 @@ lualine.setup {
     lualine_a = {
       {
         'buffers',
-        buffers_color = {
-          active = '2E3440',
-          inactive = { fg = '8D97A8', bg = '3B4252'},
-        },
-        mode = 2,
+        --buffers_color = {
+        --  active = '2E3440',
+        --  inactive = { fg = '8D97A8', bg = '3B4252'},
+        --},
+        mode = 0,
         symbols = {
           modified = ' ●',
           alternate_file = '',
