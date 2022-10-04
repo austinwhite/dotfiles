@@ -41,8 +41,6 @@ bindkey "^k" up-line-or-beginning-search # Up
 bindkey "^j" down-line-or-beginning-search # Down
 bindkey '^H' backward-kill-word # ctrl+backspace, delete previous word
 
-# TODO: FZF, zoxide
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/austin/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -57,6 +55,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-echo "\n"
-neofetch
