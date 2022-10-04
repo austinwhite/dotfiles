@@ -44,11 +44,19 @@ return require("packer").startup(function(use)
   --  "shaunsingh/nord.nvim",
   --   config = get_config("nord"),
   -- }
-  use {
-    "EdenEast/nightfox.nvim",
-    config = get_config("nightfox"),
-    run = ":NightfoxCompile",
-  }
+  -- use {
+  --   "EdenEast/nightfox.nvim",
+  --  config = get_config("nightfox"),
+  --  run = ":NightfoxCompile",
+  -- }
+  use({
+    'projekt0n/github-nvim-theme',
+    config = function()
+      require('github-theme').setup({
+        -- ...
+      })
+    end
+  })
 
   -- treesitter
   use {
