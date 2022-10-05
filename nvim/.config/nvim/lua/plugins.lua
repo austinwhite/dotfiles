@@ -53,7 +53,7 @@ return require("packer").startup(function(use)
     'projekt0n/github-nvim-theme',
     config = function()
       require('github-theme').setup({
-        -- ...
+        transparent=true
       })
     end
   })
