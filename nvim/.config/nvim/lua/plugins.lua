@@ -1,20 +1,20 @@
 local fn = vim.fn
-local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
 -- bootstrap packer if not found
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
+    'git',
+    'clone',
+    '--depth',
+    '1',
+    'https://github.com/wbthomason/packer.nvim',
     install_path,
   })
 end
 
 -- dont continue if packer isn't installed and bootstrapping failed
-local status_ok, packer = pcall(require, "packer")
+local status_ok, packer = pcall(require, 'packer')
 if not status_ok then
   return
 end
@@ -23,117 +23,104 @@ end
 packer.init {
   display = {
     open_fn = function()
-      return require("packer.util").float { border = "rounded" }
+      return require('packer.util').float({ border = 'rounded' })
     end,
   },
 }
 
 -- get require statement for a given config
 local function get_config(name)
-  return string.format("require(\"config/%s\")", name)
+  return string.format('require(\'config/%s\')', name)
 end
 
 -- plugins
-return require("packer").startup(function(use)
+return require('packer').startup(function(use)
 
   -- have packer manager itself
-  use { "wbthomason/packer.nvim" }
+  use { 'wbthomason/packer.nvim' }
 
   -- theme
-  -- use {
-  --  "shaunsingh/nord.nvim",
-  --   config = get_config("nord"),
-  -- }
-  -- use {
-  --   "EdenEast/nightfox.nvim",
-  --  config = get_config("nightfox"),
-  --  run = ":NightfoxCompile",
-  -- }
-  use({
+  use {
     'projekt0n/github-nvim-theme',
-    config = function()
-      require('github-theme').setup({
-        transparent=true
-      })
-    end
-  })
-
-  -- treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    config = get_config("treesitter"),
-    run = ":TSUpdate",
-    requires = { { "p00f/nvim-ts-rainbow" } },
+    config = get_config('colorschemes/github'),
   }
 
-  -- autoclose brackets and quotes
+  -- better syntax highlighting
   use {
-    "windwp/nvim-autopairs",
-    config = get_config("autopairs"),
+    'nvim-treesitter/nvim-treesitter',
+    config = get_config('treesitter'),
+    run = ':TSUpdate',
   }
 
-  -- completion
+  -- fuzzy finder (telescope)
   use {
-    "hrsh7th/nvim-cmp",
-    config = get_config("completion"),
+    'nvim-telescope/telescope.nvim',
+    config = get_config('telescope'),
     requires = {
-      { "hrsh7th/cmp-nvim-lsp" },
-      { "hrsh7th/cmp-buffer" },
-      { "hrsh7th/cmp-path" },
-      { "hrsh7th/cmp-cmdline" },
-      { "saadparwaiz1/cmp_luasnip" },
+      { 'nvim-lua/plenary.nvim' },
+
+      -- extensions
+      { 'nvim-telescope/telescope-file-browser.nvim' }
     },
   }
 
-  -- snippets
+  -- lsp 
   use {
-    "L3MON4D3/LuaSnip",
-    config = get_config("luasnip"),
-  }
-  use {
-    "rafamadriz/friendly-snippets",
-    requires = { { "3MON4D3/LuaSnip" } },
-  }
-
-  -- lsp
-  use {
-    "neovim/nvim-lspconfig",
-    requires = { { "williamboman/nvim-lsp-installer" } },
-    config = get_config("lsp"),
-  }
-
-  -- telescope
-  use {
-    "nvim-telescope/telescope.nvim",
+    'VonHeikemen/lsp-zero.nvim',
+    config = get_config('lsp'),
     requires = {
-        { "nvim-lua/plenary.nvim" },
-        { "nvim-lua/popup.nvim" },
-        { "nvim-telescope/telescope-media-files.nvim" },
-        { "nvim-telescope/telescope-file-browser.nvim" },
+      -- lsp support
+      { 'neovim/nvim-lspconfig' },
+      { 'williamboman/mason.nvim' },
+      { 'williamboman/mason-lspconfig.nvim' },
+
+      -- autocompletion
+      { 'hrsh7th/nvim-cmp' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
+      { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-nvim-lua' },
+
+      -- snippets
+      { 'L3MON4D3/LuaSnip' },
+      -- { 'rafamadriz/friendly-snippets' },
     },
-    config = get_config("telescope"),
   }
 
-  -- terminal
+  -- auto close brackets and quotes
   use {
-    "akinsho/toggleterm.nvim",
-    config = get_config("toggleterm"),
+    'windwp/nvim-autopairs',
+    config = function() require('nvim-autopairs').setup {} end
   }
 
-  -- status line
+  -- statusline
   use {
-    "nvim-lualine/lualine.nvim",
-    config = get_config("lualine"),
+    'nvim-lualine/lualine.nvim',
+    config = get_config('lualine'),
+    after = 'github-nvim-theme',
   }
 
+  -- buffer managerment
   use {
-    'goolord/alpha-nvim',
-    config = get_config("alpha"),
+    'kdheepak/tabline.nvim',
+    config = get_config('tabline'),
+    after = 'github-nvim-theme',
   }
+
+  -- show git changes in sign column
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = get_config('gitsigns'),
+    after = 'github-nvim-theme',
+  }
+
+  -- git commands inside nvim
+  use { 'tpope/vim-fugitive' }
 
   -- run configuration if packer was bootstrapped
   if packer_bootstrap then
-    require("packer").sync()
+    require('packer').sync()
   end
 
 end)

@@ -1,11 +1,5 @@
--- plugin management via packer
-require("plugins")
-
--- vim mappings
-require("mappings")
-
--- non plugin vim options
-require("options")
-
--- auto commands
-require("autocmds")
+require("globals")	-- global variables
+require("options")	-- non-plugin configuration
+require("plugins")	-- plugin management via Packer
+require("mappings")	-- vim mappings
+require("autocmds")	-- auto commands
