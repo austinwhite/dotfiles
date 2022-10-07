@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
-local status_ok, mason = pcall(require, 'mason.settings')
+local status_ok, mason = pcall(require, 'mason')
 if not status_ok then
   return
 end
@@ -33,6 +33,17 @@ lsp.set_preferences({
     hint = '⚑',
     info = ''
   }
+})
+
+mason.setup({
+  ui = {
+    icons = {
+      package_installed = '✓',
+      package_pending = '➜',
+      package_uninstalled = '✗'
+    },
+    border = 'rounded',
+  },
 })
 
 lsp.configure('sumneko_lua', {
