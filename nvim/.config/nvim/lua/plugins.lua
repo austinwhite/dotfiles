@@ -3,7 +3,7 @@ local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
 -- bootstrap packer if not found
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({
+  PackerBootstrap = fn.system({
     'git',
     'clone',
     '--depth',
@@ -44,6 +44,9 @@ return require('packer').startup(function(use)
     'projekt0n/github-nvim-theme',
     config = get_config('colorschemes/github'),
   }
+
+  -- speed up loading times
+  use { 'lewis6991/impatient.nvim' }
 
   -- better syntax highlighting
   use {
@@ -117,8 +120,14 @@ return require('packer').startup(function(use)
   -- git commands inside nvim
   use { 'tpope/vim-fugitive' }
 
+  -- startup page
+  use {
+    'goolord/alpha-nvim',
+    config = get_config('alpha'),
+  }
+
   -- run configuration if packer was bootstrapped
-  if packer_bootstrap then
+  if PackerBootstrap then
     require('packer').sync()
   end
 
