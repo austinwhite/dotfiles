@@ -20,7 +20,7 @@ end
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
 lsp.preset('recommended')
@@ -50,11 +50,11 @@ lsp.configure('sumneko_lua', {
   settings = {
     Lua = {
       diagnostics = {
-        globals = { "vim" },
+        globals = { 'vim' },
       },
       workspace = {
         library = {
-          library = vim.api.nvim_get_runtime_file("", true),
+          library = vim.api.nvim_get_runtime_file('', true),
         },
       },
     },
@@ -68,7 +68,7 @@ lsp.setup_nvim_cmp({
     -- ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
     -- ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
 
-    ["<Tab>"] = cmp.mapping(function(fallback) if cmp.visible() then
+    ['<Tab>'] = cmp.mapping(function(fallback) if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
@@ -77,9 +77,9 @@ lsp.setup_nvim_cmp({
       else
         fallback()
       end
-    end, { "i", "s" }),
+    end, { 'i', 's' }),
 
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then
@@ -87,8 +87,16 @@ lsp.setup_nvim_cmp({
       else
         fallback()
       end
-    end, { "i", "s" }),
+    end, { 'i', 's' }),
   })
 })
+
+-- add a border around lspconfig windows
+local status_ok, lspwin = pcall(require, 'lspconfig.ui.windows')
+if not status_ok then
+  return
+end
+
+lspwin.default_options.border = 'rounded'
 
 lsp.setup()
