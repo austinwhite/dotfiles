@@ -1,11 +1,6 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
--- set leader to space key
-keymap('', '<Space>', '<Nop>', opts)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 -- buffers
 keymap('n', '<TAB>', '<cmd>:bnext<CR>', opts)
 keymap('n', '<S-TAB>', '<cmd>:bprevious<CR>', opts)

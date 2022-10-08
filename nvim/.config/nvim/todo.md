@@ -6,4 +6,5 @@ TODO:
 - convert autocmds to native lua
 - fix vim.schedule cmp error for docs w/ blob values. (repro: scroll 'feild' items in cmp menu for '-' in a lua file)
 - integrate colorscheme in cmp doc window popouts.
-- fix color on LspInfo border
+- match LspInfo window border to other borders (using colorscheme)
+- all popup windows can be closed w/ double esc
