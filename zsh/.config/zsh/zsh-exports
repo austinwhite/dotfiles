@@ -8,7 +8,6 @@ export DENO_INSTALL="$HOME/.deno"
 export PATH="$HOME/miniconda3/bin:$PATH"        # conda
 export PATH="/var/lib/snapd/snap/bin:$PATH"     # snap packages
 export PATH="$DENO_INSTALL/bin:$PATH"           # deno
-eval "$(/opt/homebrew/bin/brew shellenv)"	# homebrew
 
 # node version manager
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
