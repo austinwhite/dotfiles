@@ -6,13 +6,10 @@ window:
     columns: 125
     lines: 83
   padding:
-    x: 4
-    y: 25
-  position:
-    x: 2000
-    y: 40
+    x: 5
+    y: 5
   dynamic_padding: true
-  decorations: Transparent
+  decorations: Full
   title: Alacritty
   opacity: 1.0
   class:
@@ -31,7 +28,7 @@ font:
     family: FiraCode Nerd Font Mono
   italic:
     family: FiraCode Nerd Font Mono
-  size: 13.0
+  size: 11.0
 
 draw_bold_text_with_bright_colors: true
 
