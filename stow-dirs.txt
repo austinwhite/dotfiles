@@ -1,1 +1,1 @@
-nvim alacritty zsh git ssh starship
+nvim alacritty zsh git ssh starship scripts tmux
