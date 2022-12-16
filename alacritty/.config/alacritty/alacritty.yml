@@ -44,7 +44,9 @@ live_config_reload: true
 shell:
   program: /bin/zsh
   args:
-    - --login
+    - -l
+    - -c
+    - "tmux attatch -f ~/.config/tmux/.tmux.conf || tmux -f ~/.config/tmux/.tmux.conf"
 
 working_directory: None
 
