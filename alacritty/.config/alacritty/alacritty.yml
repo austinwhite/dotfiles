@@ -46,7 +46,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux attatch -f ~/.config/tmux/.tmux.conf || tmux -f ~/.config/tmux/.tmux.conf"
+    - "tmux -f ~/.config/tmux/.tmux.conf new-session -A -s main"
 
 working_directory: None
 
