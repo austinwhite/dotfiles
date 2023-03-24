@@ -35,3 +35,8 @@ alias grep='grep --color=auto'
 # copy output and paste
 alias xc="xclip"
 alias xv="xclip -o"
+
+# configs
+alias zshconfig='cd $DOTFILES/zsh/.config/zsh'
+alias nvimconfig='cd $DOTFILES/nvim/.config/nvim'
+alias tmuxconfig='cd $DOTFILES/tmux/.config/tmux'
