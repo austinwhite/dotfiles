@@ -27,7 +27,6 @@ packer.init {
     end,
   },
 }
-
 -- get require statement for a given config
 local function get_config(name)
   return string.format('require(\'config/%s\')', name)

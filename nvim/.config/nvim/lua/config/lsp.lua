@@ -61,14 +61,9 @@ lsp.configure('sumneko_lua', {
   },
 })
 
--- local cmp_select = {behavior = cmp.SelectBehavior.Select}
-
 lsp.setup_nvim_cmp({
   mapping = lsp.defaults.cmp_mappings({
-    -- ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
-    -- ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
-
-    ['<Tab>'] = cmp.mapping(function(fallback) if cmp.visible() then
+    ['<C-n>'] = cmp.mapping(function(fallback) if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
@@ -79,7 +74,7 @@ lsp.setup_nvim_cmp({
       end
     end, { 'i', 's' }),
 
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
+    ['<C-p>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then
