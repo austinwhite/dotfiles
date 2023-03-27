@@ -12,7 +12,7 @@ lsp.configure("lua-language-server", {
 				globals = { "vim" },
 			},
 		},
-	},
+	}
 })
 
 local cmp = require("cmp")

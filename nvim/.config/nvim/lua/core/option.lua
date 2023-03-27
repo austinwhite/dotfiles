@@ -6,8 +6,8 @@ local g = vim.g
 
 -- set colorscheme
 api.nvim_cmd({
-  cmd = 'colorscheme',
-  args = { 'github_dimmed' }
+	cmd = "colorscheme",
+	args = { "github_dimmed" },
 }, {})
 
 -- tabs are 4 spaces long
@@ -74,7 +74,7 @@ opt.sidescrolloff = 5
 opt.undofile = true
 
 -- where to store undo file
-opt.undodir = fn.stdpath('config')..'/undo'
+opt.undodir = fn.stdpath("config") .. "/undo"
 
 -- true color
 opt.termguicolors = true
@@ -98,7 +98,7 @@ wo.cursorline = true
 wo.signcolumn = "yes"
 
 -- hide welcome message
-opt.shortmess = 'I'
+opt.shortmess = "I"
 
 -- hide netrw banner
 g.netrw_banner = 0
