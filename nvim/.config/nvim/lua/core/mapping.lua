@@ -4,8 +4,8 @@ local g = vim.g
 g.mapleader = " "
 
 -- buffers
-keymap("n", "<leader>bn", "<cmd>:bnext<CR>", {})
-keymap("n", "<leader>bp", "<cmd>:bprevious<CR>", {})
+keymap("n", "<TAB>", "<cmd>:bnext<CR>", {})
+keymap("n", "<S-TAB>", "<cmd>:bprevious<CR>", {})
 keymap("n", "<leader>bd", "<cmd>:bd<CR>", {})
 
 -- split management
