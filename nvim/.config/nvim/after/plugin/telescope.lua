@@ -2,7 +2,7 @@ local telescope = require("telescope")
 
 telescope.setup({
 	defaults = {
-		prompt_prefix = " ",
+		prompt_prefix = "filter: ",
 		selection_caret = " ",
 	},
 	pickers = {
@@ -14,6 +14,7 @@ telescope.setup({
 		},
 		buffers = {
 			theme = "ivy",
+			initial_mode = "normal",
 		},
 		help_tags = {
 			theme = "ivy",
@@ -28,13 +29,14 @@ telescope.setup({
 	extensions = {
 		file_browser = {
 			theme = "ivy",
+			initial_mode = "normal",
 			hijack_netrw = true,
 			mappings = {
 				["i"] = {
-					-- your custom insert mode mappings
+					-- insert mode mappings
 				},
 				["n"] = {
-					-- your custom normal mode mappings
+					-- normal mode mappings
 				},
 			},
 		},
@@ -44,7 +46,7 @@ telescope.setup({
 telescope.load_extension("file_browser")
 
 local builtin = require("telescope.builtin")
-local extensions = require('telescope').extensions
+local extensions = require("telescope").extensions
 
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
