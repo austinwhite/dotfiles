@@ -1,12 +1,5 @@
-local status_ok, alpha = pcall(require, 'alpha')
-if not status_ok then
-  return
-end
-
-local status_ok, dashboard = pcall(require, 'alpha.themes.dashboard')
-if not status_ok then
-  return
-end
+local alpha = require('alpha')
+local dashboard = require('alpha.themes.dashboard')
 
 local function footer()
   local total_plugins = #vim.tbl_keys(packer_plugins)
@@ -18,14 +11,6 @@ local function footer()
 end
 
 dashboard.section.header.val = {
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
     "",
     "",
     "",
@@ -54,6 +39,6 @@ dashboard.section.footer.opts.hl = 'Function'
 
 alpha.setup(dashboard.opts)
 
-vim.cmd [[
-  autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
-]]
+-- vim.cmd [[
+--   autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
+-- ]]
