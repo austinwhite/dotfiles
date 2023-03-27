@@ -1,6 +1,14 @@
 local opt = vim.opt
 local wo = vim.wo
 local fn = vim.fn
+local api = vim.api
+local g = vim.g
+
+-- set colorscheme
+api.nvim_cmd({
+  cmd = 'colorscheme',
+  args = { 'github_dimmed' }
+}, {})
 
 -- tabs are 4 spaces long
 opt.tabstop = 4
@@ -83,9 +91,6 @@ opt.splitright = true
 -- hide mode from cmdoutput areaa
 opt.showmode = false
 
--- highlight the 80th column
-wo.colorcolumn = '80'
-
 -- highlight line where cursor is
 wo.cursorline = true
 
@@ -94,3 +99,6 @@ wo.signcolumn = "yes"
 
 -- hide welcome message
 opt.shortmess = 'I'
+
+-- hide netrw banner
+g.netrw_banner = 0
