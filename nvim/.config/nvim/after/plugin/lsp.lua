@@ -71,6 +71,6 @@ null_ls.setup({
 	},
 })
 
-vim.keymap.set("n", "<C-I>", function()
+vim.keymap.set("n", "<leader>I", function()
 	vim.lsp.buf.format()
 end, {})

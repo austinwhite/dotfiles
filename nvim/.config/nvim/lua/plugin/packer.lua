@@ -70,5 +70,12 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	use({
+		"lukas-reineke/virt-column.nvim",
+		config = function()
+			require("virt-column").setup({})
+		end,
+	})
+
 	use({ "goolord/alpha-nvim" })
 end)
