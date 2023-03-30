@@ -102,3 +102,6 @@ opt.shortmess = "I"
 
 -- hide netrw banner
 g.netrw_banner = 0
+
+-- color column
+api.nvim_set_option_value("colorcolumn", "80", {})
