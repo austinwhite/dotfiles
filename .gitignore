@@ -1,10 +1,6 @@
 nvim/.config/nvim/plugin
 nvim/.config/nvim/undo
 
-zsh/.config/zsh/.zcompdump*
-zsh/.config/zsh/plugins/
-zsh/.config/zsh/.zsh_sessions
-
 scripts/.local/bin/appimages
 
 *tmux*.log
