@@ -3,7 +3,7 @@
 if ! command -v stow $> /dev/null
 then
     echo "command not found: stow"
-    echo "bootstrapping gnu stow..."
+    echo "installing gnu stow..."
     sudo pacman -S stow 2>/dev/null
     sudo apt-get install stow 2>/dev/null
     sudo yum install stow 2>/dev/null
