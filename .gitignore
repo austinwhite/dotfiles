@@ -1,6 +1,3 @@
-nvim/.config/nvim/plugin
-nvim/.config/nvim/undo
-
 scripts/.local/bin/appimages
 
 *tmux*.log
