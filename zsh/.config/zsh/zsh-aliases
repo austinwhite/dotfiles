@@ -1,0 +1,42 @@
+# shortcuts
+alias v='nvim'
+alias g='git'
+alias vim='nvim'
+alias projects='cd $HOME/Code'
+alias dots='cd $HOME/.dotfiles/'
+
+# enable sudo for aliases
+alias sudo='sudo '
+
+# print each PATH entry on a seperate line
+alias path='echo -e ${PATH//:/\\n}'
+
+# tmux should use config in ~/.config/tmux
+alias tmux='tmux -f $HOME/.config/tmux/.tmux.conf'
+
+# ls
+alias ls='ls --color=auto'
+alias la='ls -a --color=auto'
+alias ll='ls -l --color=auto'
+alias lla='ls -la --color=auto'
+alias llrt='ls -lrt --color=auto'
+
+# quicker navigation 
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ~='cd ~'
+alias -- -='cd -'
+
+# colorize grep
+alias grep='grep --color=auto'
+
+# copy output and paste
+alias xc="xclip"
+alias xv="xclip -o"
+
+# configs
+alias zshconfig='cd $DOTFILES/zsh/.config/zsh'
+alias nvimconfig='cd $DOTFILES/nvim/.config/nvim'
+alias tmuxconfig='cd $DOTFILES/tmux/.config/tmux'
