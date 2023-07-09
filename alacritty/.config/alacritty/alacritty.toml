@@ -1,0 +1,145 @@
+live_config_reload = true
+working_directory = "None"
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[[colors.indexed_colors]]
+color = "0xd18616"
+index = 16
+
+[[colors.indexed_colors]]
+color = "0xff938a"
+index = 17
+
+[colors.bright]
+black = "0x636e7b"
+blue = "0x6cb6ff"
+cyan = "0x56d4dd"
+green = "0x6bc46d"
+magenta = "0xdcbdfb"
+red = "0xff938a"
+white = "0xcdd9e5"
+yellow = "0xdaaa3f"
+
+[colors.normal]
+black = "0x545d68"
+blue = "0x539bf5"
+cyan = "0x39c5cf"
+green = "0x57ab5a"
+magenta = "0xb083f0"
+red = "0xf47067"
+white = "0x909dab"
+yellow = "0xc69026"
+
+[colors.primary]
+background = "0x22272e"
+foreground = "0x768390"
+
+[cursor]
+style = "Underline"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 8.0
+
+[font.bold]
+family = "FiraCode Nerd Font Mono"
+
+[font.italic]
+family = "FiraCode Nerd Font Mono"
+
+[font.normal]
+family = "FiraCode Nerd Font Mono"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "PasteSelection"
+key = "Insert"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "End"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "Home"
+mods = "Shift"
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[shell]
+args = ["-l", "-c", "tmux -f ~/.config/tmux/.tmux.conf new-session -A -s main"]
+program = "/bin/zsh"
+
+[window]
+decorations = "Full"
+dynamic_padding = true
+opacity = 1.0
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 5
+y = 5
