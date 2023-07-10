@@ -24,11 +24,12 @@ autoload -Uz colors && colors
 
 source "$ZDOTDIR/zsh-functions"
 
+# force disable vi mode
+bindkey -e
+
 zsh_add_file "zsh-exports"
-zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
 zsh_add_file "zsh-prompt"
-zsh_add_file "zsh-vim-mode"
 
 # plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
