@@ -1,3 +1,10 @@
 scripts/.local/bin/appimages
 
 *tmux*.log
+
+nvim/**/plugin 
+nvim/**/undo 
+zsh/**/.zcompdump
+zsh/**/plugins/
+zsh/.config/zsh/.zcompdump
+zsh/.config/zsh/plugins/
