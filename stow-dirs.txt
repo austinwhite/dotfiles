@@ -1,1 +1,1 @@
-fonts zsh starship env alacritty git scripts tmux
+fonts zsh starship env alacritty git scripts tmux conda
