@@ -3,16 +3,11 @@ local wo = vim.wo
 local fn = vim.fn
 local api = vim.api
 local g = vim.g
+local cmd = vim.cmd
 
 -- disable netrw for alternative
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
-
--- set colorscheme
-api.nvim_cmd({
-	cmd = "colorscheme",
-	args = { "github_dimmed" },
-}, {})
 
 -- tabs are 4 spaces long
 opt.tabstop = 4

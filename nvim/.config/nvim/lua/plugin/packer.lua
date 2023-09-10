@@ -1,79 +1,83 @@
-vim.cmd([[packadd packer.nvim]])
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
-    use({ "wbthomason/packer.nvim" })
+  use({"wbthomason/packer.nvim"})
 
-    use({ "projekt0n/github-nvim-theme", tag = "v0.0.7" })
+  use({
+    "projekt0n/github-nvim-theme",
+    tag = "v0.0.7"
+  })
 
-    use({
-        "nvim-telescope/telescope.nvim",
-        tag = "0.1.1",
-        requires = {
-            { "nvim-lua/plenary.nvim" },
+  use({
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.1",
+    requires = {{"nvim-lua/plenary.nvim"},
 
-            -- extensions
-            { "nvim-telescope/telescope-file-browser.nvim" },
-        },
-    })
+    -- extensions
+    {"nvim-telescope/telescope-file-browser.nvim"}}
+  })
 
-    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-    use({ "nvim-treesitter/playground" })
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate"
+  })
 
-    use({ "mbbill/undotree" })
+  use({"nvim-treesitter/playground"})
 
-    use({ "tpope/vim-fugitive" })
+  use({"mbbill/undotree"})
 
-    use({
-        "VonHeikemen/lsp-zero.nvim",
-        branch = "v2.x",
-        requires = {
-            -- lsp Support
-            { "neovim/nvim-lspconfig" },
-            { "williamboman/mason.nvim" },
-            { "williamboman/mason-lspconfig.nvim" },
+  use({"tpope/vim-fugitive"})
 
-            -- autocompletion
-            { "hrsh7th/nvim-cmp" },
-            { "hrsh7th/cmp-nvim-lsp" },
-            { "hrsh7th/cmp-buffer" },
-            { "hrsh7th/cmp-path" },
-            { "saadparwaiz1/cmp_luasnip" },
-            { "hrsh7th/cmp-nvim-lua" },
+  use({
+    "VonHeikemen/lsp-zero.nvim",
+    branch = "v2.x",
+    requires = { 
+    -- lsp Support
+    {"neovim/nvim-lspconfig"},
+    {"williamboman/mason.nvim"},
+    {"williamboman/mason-lspconfig.nvim"},
+    
+    -- autocompletion
+    {"hrsh7th/nvim-cmp"},
+    {"hrsh7th/cmp-nvim-lsp"},
+    {"hrsh7th/cmp-buffer"},
+    {"hrsh7th/cmp-path"},
+    {"saadparwaiz1/cmp_luasnip"},
+    {"hrsh7th/cmp-nvim-lua"},
+    
+    -- snippets
+    {"L3MON4D3/LuaSnip"},
+    {"rafamadriz/friendly-snippets"},
+    
+    -- dap and lsp support
+    {"jose-elias-alvarez/null-ls.nvim"}}
+  })
 
-            -- snippets
-            { "L3MON4D3/LuaSnip" },
-            { "rafamadriz/friendly-snippets" },
+  use({
+    "nvim-lualine/lualine.nvim",
+    requires = "nvim-tree/nvim-web-devicons"
+  })
 
-            -- dap and lsp support
-            { "jose-elias-alvarez/null-ls.nvim" },
-        },
-    })
+  use({"windwp/nvim-autopairs"})
 
-    use({
-        "nvim-lualine/lualine.nvim",
-        requires = "nvim-tree/nvim-web-devicons",
-    })
+  use({"folke/trouble.nvim"})
 
-    use({
-        "windwp/nvim-autopairs",
-        config = function()
-            require("nvim-autopairs").setup({})
-        end,
-    })
+  use({"lukas-reineke/virt-column.nvim"})
 
-    use({
-        "folke/trouble.nvim",
-        config = function()
-            require("trouble").setup({})
-        end,
-    })
+  use({"goolord/alpha-nvim"})
 
-    use({
-        "lukas-reineke/virt-column.nvim",
-        config = function()
-            require("virt-column").setup({})
-        end,
-    })
-
-    use({ "goolord/alpha-nvim" })
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
