@@ -15,11 +15,12 @@ if [ ! -d "$HOME/.local/share" ]; then
   mkdir -p $HOME/.local/share
 fi
 
-if [ ! -d "$HOME/.xdg" ]; then
-  mkdir -p $HOME/.xdg
-fi
-
 # projects dir 
 if [ ! -d "$HOME/Code" ]; then
   mkdir $HOME/Code
+fi
+
+# appimages
+if [ ! -d "$HOME/appimages" ]; then
+  mkdir -p $HOME/appimages
 fi

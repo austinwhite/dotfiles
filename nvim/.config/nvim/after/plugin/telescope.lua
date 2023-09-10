@@ -1,46 +1,49 @@
-local telescope = require("telescope")
+local status_ok, telescope = pcall(require, "telescope")
+if not status_ok then
+  return
+end
 
 telescope.setup({
-	defaults = {
-		prompt_prefix = "filter: ",
-		selection_caret = " ",
-	},
-	pickers = {
-		find_files = {
-			theme = "ivy",
-            hidden = true,
-		},
-		live_grep = {
-			theme = "ivy",
-		},
-		buffers = {
-			theme = "ivy",
-		},
-		help_tags = {
-			theme = "ivy",
-		},
-		grep_string = {
-			theme = "ivy",
-		},
-		git_files = {
-			theme = "ivy",
-		},
-	},
-	extensions = {
-		file_browser = {
-			theme = "ivy",
-			hijack_netrw = true,
-            hidden = true,
-			mappings = {
-				["i"] = {
-					-- insert mode mappings
-				},
-				["n"] = {
-					-- normal mode mappings
-				},
-			},
-		},
-	},
+  defaults = {
+    prompt_prefix = "filter: ",
+    selection_caret = " "
+  },
+  pickers = {
+    find_files = {
+      theme = "ivy",
+      hidden = true
+    },
+    live_grep = {
+      theme = "ivy"
+    },
+    buffers = {
+      theme = "ivy"
+    },
+    help_tags = {
+      theme = "ivy"
+    },
+    grep_string = {
+      theme = "ivy"
+    },
+    git_files = {
+      theme = "ivy"
+    }
+  },
+  extensions = {
+    file_browser = {
+      theme = "ivy",
+      hijack_netrw = true,
+      hidden = true,
+      mappings = {
+        ["i"] = {
+          -- insert mode mappings
+        },
+        ["n"] = {
+          -- normal mode mappings
+        }
+      }
+    }
+  }
 })
 
 telescope.load_extension("file_browser")
