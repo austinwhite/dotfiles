@@ -1,4 +1,4 @@
-local colorscheme = "github_dimmed"
+local colorscheme = "github_dark"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 
