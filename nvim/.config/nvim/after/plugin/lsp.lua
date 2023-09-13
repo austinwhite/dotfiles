@@ -22,13 +22,15 @@ local status_ok, cmp = pcall(require, "cmp")
 if not status_ok then
   return
 end
+
 local cmp_select = {
   behavior = cmp.SelectBehavior.Select
 }
+
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
   ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-  ["<C-y>"] = cmp.mapping.confirm({
+  ["<CR>"] = cmp.mapping.confirm({
     select = true
   }),
   ["<C-Space>"] = cmp.mapping.complete()
@@ -54,6 +56,7 @@ local status_ok, mason = pcall(require, "mason")
 if not status_ok then
   return
 end
+
 mason.setup({
   ui = {
     icons = {
@@ -70,6 +73,7 @@ local status_ok, lspwin = pcall(require, "lspconfig.ui.windows")
 if not status_ok then
   return
 end
+
 lspwin.default_options.border = "rounded"
 
 lsp.setup()
