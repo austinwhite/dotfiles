@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+
+fc-cache -f -v
+
