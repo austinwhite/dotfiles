@@ -3,8 +3,12 @@ scripts/.local/bin/appimages
 *tmux*.log
 
 nvim/**/plugin 
-nvim/**/undo 
+nvim/**/undo
+nvim/**/packer_compiled.lua
+
 zsh/**/.zcompdump
 zsh/**/plugins/
 zsh/.config/zsh/.zcompdump
 zsh/.config/zsh/plugins/
+zsh/.config/zsh/.zsh_sessions
+

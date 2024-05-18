@@ -1,0 +1,24 @@
+#! /bin/env bash
+
+function usage() {
+    echo "usage: deploy [stow,unstow]"
+    exit 1
+}
+
+STOW_DIRS="$(find . -maxdepth 1 -mindepth 1  -type d | grep -v deploy_helpers | grep -v "\.git" | sed 's/^\.\///g')"
+
+if [ "$1" == "stow" ]; then 
+    while IFS= read -r config
+    do 
+        echo "Stowing $config..."
+        stow "$config"
+    done <<< "${STOW_DIRS}"
+elif [ "$1" == "unstow" ]; then 
+    while IFS= read -r config
+    do 
+        echo "Unstowing $config..."
+        stow -D "$config"
+    done <<< "${STOW_DIRS}"
+else
+    usage
+fi

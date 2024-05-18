@@ -1,1 +1,0 @@
-zsh starship env alacritty git tmux conda mac_fonts
