@@ -1,0 +1,35 @@
+#! /bin/env bash
+
+function usage() {
+    echo "usage: $0 [config dir]"
+}
+
+if [ -z "$1" ]; then
+    usage
+    exit 1
+fi
+
+if [ ! -d "$1" ]; then
+    echo "'$1' is does not exist or is not a directory."
+    usage
+    exit 1
+fi
+
+if [[ "$1" == .* ]]; then
+    NEW_NAME="${1#.}"
+    echo "Turning on '$1'"
+else
+    NEW_NAME=".$1"
+    echo "Turning off '$1'"
+fi
+
+mv $1 ${NEW_NAME}
+
+_dir_completion() {
+    local cur="${COMP_WORDS[COMP_CWORD]}"
+    local exclude="deploy_helper|.git|\.|\.\."
+    COMPREPLY=($(compgen -d -- "$cur" | grep -Ev "^($exclude)$"))
+}
+
+complete -F _dir_completion $0
+
