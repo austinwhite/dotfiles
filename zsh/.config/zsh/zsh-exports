@@ -9,7 +9,7 @@ export PATH="$HOME/miniconda3/bin:$PATH"        # conda
 export PATH="/var/lib/snapd/snap/bin:$PATH"     # snap packages
 export PATH="$DENO_INSTALL/bin:$PATH"           # deno
 export PATH="/opt/android-studio/bin:$PATH"     # android dev tools
-export PATH="/opt/homebrew/bin:$PATH"     	# homebrew
+export PATH="/opt/homebrew/bin:$PATH"       	# homebrew
 
 # node version manager
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"

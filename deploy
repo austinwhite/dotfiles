@@ -5,20 +5,28 @@ function usage() {
     exit 1
 }
 
-STOW_DIRS="$(find . -maxdepth 1 -mindepth 1  -type d | grep -v deploy_helpers | grep -v "\.git" | sed 's/^\.\///g')"
+CANDIDATES="$(find . -maxdepth 1 -mindepth 1  -type d ! -name ".*" \
+    | grep -v deploy_helpers \
+    | sed 's/^\.\///g')"
+
+echo "Found: ${CANDIDATES}" \
+    | awk '{printf "%s%s", (NR==1?"":", "), $0} END {print "\n"}'
 
 if [ "$1" == "stow" ]; then 
-    while IFS= read -r config
+    while IFS= read -r CANDIDATE
     do 
-        echo "Stowing $config..."
-        stow "$config"
-    done <<< "${STOW_DIRS}"
+        echo "Stowing $CANDIDATE..."
+        stow "$CANDIDATE"
+    done <<< "${CANDIDATES}"
 elif [ "$1" == "unstow" ]; then 
-    while IFS= read -r config
+    while IFS= read -r CANDIDATE
     do 
-        echo "Unstowing $config..."
-        stow -D "$config"
-    done <<< "${STOW_DIRS}"
+        echo "Unstowing $CANDIDATE..."
+        stow -D "$CANDIDATE"
+    done <<< "${CANDIDATES}"
 else
     usage
 fi
+
+echo -e "\nOperations completed successfully."
+

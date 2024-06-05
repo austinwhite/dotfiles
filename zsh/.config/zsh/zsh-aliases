@@ -1,6 +1,9 @@
+# steal the good ones form here: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
+
 # shortcuts
 alias v='nvim'
 alias g='git'
+alias d='docker'
 alias projects='cd $HOME/Code'
 alias dots='cd $HOME/.dotfiles/'
 
@@ -28,11 +31,4 @@ alias -- -='cd -'
 # colorize grep
 alias grep='grep --color=auto'
 
-# copy output and paste
-alias xc="xclip"
-alias xv="xclip -o"
-
-# configs
-alias zshconfig='cd $DOTFILES/zsh/.config/zsh'
-alias nvimconfig='cd $DOTFILES/nvim/.config/nvim'
-alias tmuxconfig='cd $DOTFILES/tmux/.config/tmux'
+alias zshsource='source $DOTFILES/zsh/.config/zsh/.zshrc'
