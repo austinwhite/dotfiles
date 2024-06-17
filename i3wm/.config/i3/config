@@ -139,6 +139,8 @@ exec_always --no-startup-id picom &
 exec_always --no-startup-id nitrogen --restore &
 exec_always --no-startup-id dunst &
 
+bindsym $mod+p exec rofi -show power-menu -modi power-menu:~/.config/rofi/scripts/rofi-power-menu
+
 # status bar
 exec_always --no-startup-id /home/austin/.config/polybar/launch.sh &
 
