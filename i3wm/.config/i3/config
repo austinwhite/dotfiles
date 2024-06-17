@@ -123,23 +123,23 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # launcher
-bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+bindcode $mod+40 exec --no-startup-id "rofi -modi drun,run -show drun"
 
 # applications
-bindsym $mod+Shift+Return exec alacritty
-bindsym $mod+Shift+b exec brave-browser
+bindsym $mod+Shift+Return exec --no-startup-id alacritty
+bindsym $mod+Shift+b exec --no-startup-id brave-browser
 
 # media keys and brightness keys
-bindsym XF86AudioMute exec amixer sset 'Master' toggle
-bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
-bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
+bindsym XF86AudioMute exec --no-startup-id amixer sset 'Master' toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset 'Master' 5%-
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset 'Master' 5%+
 
 # startup
 exec_always --no-startup-id picom &
 exec_always --no-startup-id nitrogen --restore &
 exec_always --no-startup-id dunst &
 
-bindsym $mod+p exec rofi -show power-menu -modi power-menu:~/.config/rofi/scripts/rofi-power-menu
+bindsym $mod+p exec --no-startup-id rofi -show power-menu -modi power-menu:~/.config/rofi/scripts/rofi-power-menu
 
 # status bar
 exec_always --no-startup-id /home/austin/.config/polybar/launch.sh &
