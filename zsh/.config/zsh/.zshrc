@@ -18,6 +18,10 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # load completions
 autoload -Uz compinit && compinit
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
 
 # plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -35,9 +39,10 @@ zinit cdreplay -q
 
 # keybindings
 bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
+bindkey "^p" up-line-or-beginning-search
+bindkey "^n" down-line-or-beginning-search
 bindkey '^[w' kill-region
+bindkey '^H' backward-kill-word # ctrl+backspace, delete previous word
 
 # history
 HISTSIZE=5000
@@ -57,6 +62,7 @@ unsetopt BEEP
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
+zstyle ':completion:*' menu select
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
@@ -87,6 +93,14 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+tmux-window-name() {
+    if [[ -v TMUX ]]; then
+	    ($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
+    fi
+}
+
+add-zsh-hook chpwd tmux-window-name
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

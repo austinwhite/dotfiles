@@ -16,9 +16,9 @@ lualine.setup({
       right = ""
     },
     disabled_filetypes = {
-      statusline = {},
-      winbar = {}
-    }
+      statusline = { 'packer', 'NVimTree', 'Alpha' },
+      winbar = {},
+    },
   },
   sections = {
     lualine_a = {"mode"},
