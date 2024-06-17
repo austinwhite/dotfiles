@@ -1,6 +1,11 @@
-[user]
-    name = austin
-    email = austin@modernintelligence.ai
+[includeIf "gitdir:~/*/Nomadik/*/"]
+    path = ~/.gitconfig-nomadik
+[includeIf "gitdir:~/*/Modern/*/"]
+    path = ~/.gitconfig-modern
+[includeIf "gitdir:~/*/Personal/*/"]
+    path = ~/.gitconfig-personal
+[includeIf "gitdir:~/.dotfiles/"]
+    path = ~/.gitconfig-modern
 [submodule]
     recurse = true
 [credential]
