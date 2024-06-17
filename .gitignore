@@ -1,8 +1,9 @@
 scripts/.local/bin/appimages
 
 *tmux*.log
+tmux/**/plugins
 
-nvim/**/plugin 
+nvim/.config/nvim/plugin/
 nvim/**/undo
 nvim/**/packer_compiled.lua
 

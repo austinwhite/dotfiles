@@ -1,24 +1,34 @@
 #! /bin/env bash
 
-function usage() {
-    echo "usage: deploy [stow,unstow]"
-    exit 1
+usage() {
+    echo "usage: $0 [stow,unstow]"
 }
 
-CANDIDATES="$(find . -maxdepth 1 -mindepth 1  -type d ! -name ".*" \
-    | grep -v deploy_helpers \
-    | sed 's/^\.\///g')"
+find_candidates() {
+    CANDIDATES="$(find . -maxdepth 1 -mindepth 1  -type d ! -name ".*" \
+        | grep -v deploy_helpers \
+        | grep -v ignore \
+        | sed 's/^\.\///g')"
+}
 
-echo "Found: ${CANDIDATES}" \
-    | awk '{printf "%s%s", (NR==1?"":", "), $0} END {print "\n"}'
+print_candidates() {
+    echo "Found $(echo "${CANDIDATES}" | wc -l) candidates: ${CANDIDATES}" \
+        | awk '{printf "%s%s", (NR==1?"":", "), $0} END {print "\n"}'
+}
 
 if [ "$1" == "stow" ]; then 
+    find_candidates
+    print_candidates
+
     while IFS= read -r CANDIDATE
     do 
         echo "Stowing $CANDIDATE..."
         stow "$CANDIDATE"
     done <<< "${CANDIDATES}"
 elif [ "$1" == "unstow" ]; then 
+    find_candidates
+    print_candidates
+
     while IFS= read -r CANDIDATE
     do 
         echo "Unstowing $CANDIDATE..."
@@ -26,6 +36,7 @@ elif [ "$1" == "unstow" ]; then
     done <<< "${CANDIDATES}"
 else
     usage
+    exit 1
 fi
 
 echo -e "\nOperations completed successfully."
