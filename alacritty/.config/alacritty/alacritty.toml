@@ -1,4 +1,4 @@
-import = ["/home/austin/.config/alacritty/colors/github-dark.toml"]
+import = ["/Users/austin/.config/alacritty/colors/github-dark.toml"]
 
 live_config_reload = true
 working_directory = "None"
@@ -13,7 +13,7 @@ TERM = "xterm-256color"
 WINIT_X11_SCALE_FACTOR = "1"
 
 [font]
-size = 10.5
+size = 12
 
 [font.glyph_offset]
 x = 0
@@ -109,7 +109,7 @@ multiplier = 3
 program = "/bin/zsh"
 
 [window]
-decorations = "Full"
+decorations = "transparent"
 dynamic_padding = true
 opacity = 1.0
 title = "Alacritty"
@@ -120,5 +120,5 @@ instance = "Alacritty"
 
 [window.padding]
 x = 5
-y = 5
+y = 25
 
