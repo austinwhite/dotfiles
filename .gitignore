@@ -1,5 +1,7 @@
 scripts/.local/bin/appimages
 
+.DS_store
+
 *tmux*.log
 tmux/**/plugins
 
