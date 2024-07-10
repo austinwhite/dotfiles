@@ -1,4 +1,4 @@
-import = ["/Users/austin/.config/alacritty/colors/github-dark.toml"]
+import = ["/Users/austin/.config/alacritty/colors/github-dark-dimmed.toml"]
 
 live_config_reload = true
 working_directory = "None"
