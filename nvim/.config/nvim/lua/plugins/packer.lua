@@ -19,7 +19,7 @@ return require("packer").startup(function(use)
     tag = "v0.0.7"
   })
 
-  use {'shaunsingh/nord.nvim'}
+  use ({ "supermaven-inc/supermaven-nvim" })
 
   use({
     "nvim-telescope/telescope.nvim",
