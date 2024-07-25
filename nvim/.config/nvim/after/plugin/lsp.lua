@@ -89,7 +89,7 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
   debug = false,
   sources = {formatting.prettier, formatting.stylua, formatting.clang_format, formatting.cmake_format,
-             formatting.autoflake}
+             formatting.black}
 })
 
 vim.keymap.set("n", "<leader>I", function()
