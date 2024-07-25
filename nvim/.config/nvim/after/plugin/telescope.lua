@@ -5,28 +5,33 @@ end
 
 telescope.setup({
   defaults = {
-    prompt_prefix = "filter: ",
-    selection_caret = " "
+    prompt_prefix = ": ",
+    selection_caret = " ",
+    ripgrep_arguments = {
+      'rg',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '--no-ignore'
+    },
   },
   pickers = {
     find_files = {
-      theme = "ivy",
-      hidden = true
+      hidden = true,
+      file_ignore_patterns = {".git/", ".cache", "%.o", "%.a", "%.out", "%.class",
+		"%.pdf", "%.mkv", "%.mp4", "%.zip"},
     },
     live_grep = {
-      theme = "ivy"
     },
     buffers = {
-      theme = "ivy"
     },
     help_tags = {
-      theme = "ivy"
     },
     grep_string = {
-      theme = "ivy"
     },
     git_files = {
-      theme = "ivy"
     }
   },
   extensions = {
