@@ -88,11 +88,12 @@ local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
     debug = false,
-    sources = { formatting.stylua, formatting.clang_format, formatting.cmake_format,
+    sources = {
+        formatting.stylua,
+        formatting.clang_format,
+        formatting.cmake_format,
         formatting.black,
-        formatting.prettier.with({
-            filetypes = { "html", "css", "javascript", "typescript", "json", "markdown", "yaml" }
-        }),
+        formatting.prettier
     }
 })
 
