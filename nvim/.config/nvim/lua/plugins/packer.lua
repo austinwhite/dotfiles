@@ -19,8 +19,6 @@ return require("packer").startup(function(use)
     tag = "v0.0.7"
   })
 
-  use ({ "supermaven-inc/supermaven-nvim" })
-
   use({
     "nvim-telescope/telescope.nvim",
     tag = "0.1.4",
