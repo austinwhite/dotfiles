@@ -44,6 +44,6 @@
     old = red
     new = green
 [init]
-    defaultbranch = main
+    defaultbranch = master
 [pull]
     rebase = false

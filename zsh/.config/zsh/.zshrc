@@ -72,10 +72,10 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 [[ ! -f $ZDOTDIR/zsh-aliases ]] || source $ZDOTDIR/zsh-aliases
 
 # shell integrations
-# eval "$(fzf --zsh)"
+ eval "$(fzf --zsh)"
 # must soruce fzf files manually. --zsh flag isn't supported on debian yet
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+# source /usr/share/doc/fzf/examples/key-bindings.zsh
+# source /usr/share/doc/fzf/examples/completion.zsh
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(zoxide init zsh)"
 
@@ -100,8 +100,14 @@ tmux-window-name() {
     fi
 }
 
-add-zsh-hook chpwd tmux-window-name
-
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
+
+# pnpm
+export PNPM_HOME="/Users/austin/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

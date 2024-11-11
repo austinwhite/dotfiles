@@ -1,4 +1,4 @@
-#! /bin/env bash
+#! /bin/bash
 
 usage() {
     echo "usage: $0 [stow,unstow]"
@@ -23,7 +23,7 @@ if [ "$1" == "stow" ]; then
     while IFS= read -r CANDIDATE
     do 
         echo "Stowing $CANDIDATE..."
-        stow "$CANDIDATE"
+        stow "$CANDIDATE" -t $HOME
     done <<< "${CANDIDATES}"
 elif [ "$1" == "unstow" ]; then 
     find_candidates
@@ -32,7 +32,7 @@ elif [ "$1" == "unstow" ]; then
     while IFS= read -r CANDIDATE
     do 
         echo "Unstowing $CANDIDATE..."
-        stow -D "$CANDIDATE"
+        stow -D "$CANDIDATE" -t $HOME
     done <<< "${CANDIDATES}"
 else
     usage

@@ -4,8 +4,8 @@
 alias v='nvim'
 alias g='git'
 alias d='docker'
-alias projects='cd $HOME/Code'
-alias dots='cd $HOME/.dotfiles/'
+alias projects='cd $HOME/Projects'
+alias dots='cd $DOTFILES'
 
 # print each PATH entry on a seperate line
 alias path='echo -e ${PATH//:/\\n}'

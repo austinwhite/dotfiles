@@ -21,7 +21,7 @@ return require("packer").startup(function(use)
 
   use({
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.1",
+    tag = "0.1.4",
     requires = {{"nvim-lua/plenary.nvim"},
 
     -- extensions
@@ -54,7 +54,7 @@ return require("packer").startup(function(use)
     {"neovim/nvim-lspconfig"},
     {"williamboman/mason.nvim"},
     {"williamboman/mason-lspconfig.nvim"},
-    
+
     -- autocompletion
     {"hrsh7th/nvim-cmp"},
     {"hrsh7th/cmp-nvim-lsp"},
@@ -62,11 +62,11 @@ return require("packer").startup(function(use)
     {"hrsh7th/cmp-path"},
     {"saadparwaiz1/cmp_luasnip"},
     {"hrsh7th/cmp-nvim-lua"},
-    
+
     -- snippets
     {"L3MON4D3/LuaSnip"},
     {"rafamadriz/friendly-snippets"},
-    
+
     -- dap and lsp support
     {"jose-elias-alvarez/null-ls.nvim"}}
   })
