@@ -3,10 +3,10 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- tabs are 4 spaces long
-vim.opt.tabstop = 4
+vim.opt.tabstop = 2
 
 -- number of spaces to use when inserting a tab
-vim.opt.shiftwidth = 4
+vim.opt.shiftwidth = 2
 
 -- amount of rows for cmd output
 vim.opt.cmdheight = 1
