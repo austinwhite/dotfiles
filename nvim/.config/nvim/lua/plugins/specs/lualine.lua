@@ -10,17 +10,8 @@ return {
         component_separators = "|",
         section_separators = { left = "", right = "" },
         disabled_filetypes = {
-          statusline = { "alpha", "NvimTree", "ministarter" },
-          winbar = { "alpha", "NvimTree", "ministarter" },
+          statusline = { "undotree", "NvimTree", "ministarter" },
         },
-      },
-      winbar = {
-        lualine_a = { "buffers" },
-        lualine_b = {},
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {},
       },
     })
   end,

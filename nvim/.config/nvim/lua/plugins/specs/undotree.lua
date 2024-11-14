@@ -3,6 +3,15 @@ return {
   dependencies = "nvim-lua/plenary.nvim",
   config = function()
     require("undotree").setup({
+      float_diff = true,
+      ignore_filetype = {
+        "undotree",
+        "undotreeDiff",
+        "qf",
+        "TelescopePrompt",
+        "spectre_panel",
+        "tsplayground",
+      },
       window = {
         winblend = 0,
       },
