@@ -2,6 +2,9 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- using nerd font
+vim.g.have_nerd_font = true
+
 -- tabs are 4 spaces long
 vim.opt.tabstop = 2
 
