@@ -7,6 +7,13 @@ return {
   },
   config = function()
     require("nvim-tree").setup({})
-    vim.keymap.set("n", "<leader>rw", "<cmd>:NvimTreeToggle<CR>", {})
   end,
+  keys = {
+    {
+      "<leader>rw",
+      function()
+        require("nvim-tree.api").tree.toggle()
+      end,
+    },
+  },
 }

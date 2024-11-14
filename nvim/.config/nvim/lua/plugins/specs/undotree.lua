@@ -21,6 +21,12 @@ return {
     {
       "<leader>u",
       function()
+        -- local nvim_tree_api = require("nvim-tree.api").tree
+        --
+        -- if nvim_tree_api.is_visible({ opts = { tabpage = vim.api.nvim_get_current_tabpage() } }) then
+        --   nvim_tree_api.close()
+        -- end
+
         require("undotree").toggle()
       end,
     },
