@@ -17,37 +17,33 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
-local function close_sidebar_windows()
-  local tree_wins = {}
-  local floating_wins = {}
-  local sidebar_filetypes = {
-    ["NvimTree_"] = true,
-    ["undotree"] = true,
-    ["diff"] = true,
-  }
-
-  local wins = vim.api.nvim_list_wins()
-  for _, w in ipairs(wins) do
-    local bufnr = vim.api.nvim_win_get_buf(w)
-    local bufname = vim.api.nvim_buf_get_name(bufnr)
-    local filetype = vim.api.nvim_buf_get_option(bufnr, "filetype")
-
-    if sidebar_filetypes[filetype] or bufname:match("NvimTree_") ~= nil then
-      table.insert(tree_wins, w)
-    end
-    if vim.api.nvim_win_get_config(w).relative ~= "" then
-      table.insert(floating_wins, w)
-    end
-  end
-
-  if 1 == #wins - #floating_wins - #tree_wins then
-    for _, w in ipairs(tree_wins) do
-      vim.api.nvim_win_close(w, true)
-    end
-  end
-end
-
-vim.api.nvim_create_autocmd("QuitPre", {
+-- Make :bd and :q behave as usual when tree is visible
+vim.api.nvim_create_autocmd({ "BufEnter", "QuitPre" }, {
   group = augroup,
-  callback = close_sidebar_windows,
+  nested = false,
+  callback = function(e)
+    local tree = require("nvim-tree.api").tree
+
+    if not tree.is_visible() then
+      return
+    end
+
+    local winCount = 0
+    for _, winId in ipairs(vim.api.nvim_list_wins()) do
+      if vim.api.nvim_win_get_config(winId).focusable then
+        winCount = winCount + 1
+      end
+    end
+
+    if e.event == "QuitPre" and winCount == 2 then
+      vim.api.nvim_cmd({ cmd = "qall" }, {})
+    end
+
+    if e.event == "BufEnter" and winCount == 1 then
+      vim.defer_fn(function()
+        tree.toggle({ find_file = true, focus = true })
+        tree.toggle({ find_file = true, focus = false })
+      end, 10)
+    end
+  end,
 })
