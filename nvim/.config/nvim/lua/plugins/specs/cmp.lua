@@ -28,7 +28,25 @@ return {
     local luasnip = require("luasnip")
     luasnip.config.setup({})
 
+    local border_opts = {
+      border = {
+        { "╭", "CmpBorder" },
+        { "─", "CmpBorder" },
+        { "╮", "CmpBorder" },
+        { "│", "CmpBorder" },
+        { "╯", "CmpBorder" },
+        { "─", "CmpBorder" },
+        { "╰", "CmpBorder" },
+        { "│", "CmpBorder" },
+      },
+      winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+    }
+
     cmp.setup({
+      window = {
+        completion = cmp.config.window.bordered(border_opts),
+        documentation = cmp.config.window.bordered(border_opts),
+      },
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
@@ -41,6 +59,7 @@ return {
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+        ["<Enter>"] = cmp.mapping.confirm({ select = true }),
         ["<C-Space>"] = cmp.mapping.complete({}),
         ["<C-l>"] = cmp.mapping(function()
           if luasnip.expand_or_locally_jumpable() then
@@ -63,5 +82,8 @@ return {
         { name = "path" },
       },
     })
+
+    local fg_color = vim.api.nvim_get_hl(0, { name = "LineNr" }).fg
+    vim.api.nvim_set_hl(0, "CmpBorder", { fg = fg_color })
   end,
 }

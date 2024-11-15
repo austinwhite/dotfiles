@@ -1,5 +1,6 @@
 local augroup = vim.api.nvim_create_augroup("UserAutoCommands", { clear = true })
 
+-- flash highlight text on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = augroup,
   desc = "Highlight yanked text",

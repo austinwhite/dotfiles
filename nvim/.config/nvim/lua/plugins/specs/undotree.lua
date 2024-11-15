@@ -11,6 +11,7 @@ return {
         "TelescopePrompt",
         "spectre_panel",
         "tsplayground",
+        "ministarter",
       },
       window = {
         winblend = 0,
@@ -21,11 +22,28 @@ return {
     {
       "<leader>u",
       function()
-        -- local nvim_tree_api = require("nvim-tree.api").tree
-        --
-        -- if nvim_tree_api.is_visible({ opts = { tabpage = vim.api.nvim_get_current_tabpage() } }) then
-        --   nvim_tree_api.close()
-        -- end
+        local current_ft = vim.bo.filetype
+
+        local ignored_filetypes = {
+          "undotree",
+          "undotreeDiff",
+          "qf",
+          "TelescopePrompt",
+          "spectre_panel",
+          "tsplayground",
+          "ministarter",
+        }
+
+        for _, ft in ipairs(ignored_filetypes) do
+          if current_ft == ft then
+            vim.notify("Cannot open undotree in " .. current_ft .. " buffer", vim.log.levels.WARN, {
+              title = "Undotree",
+              icon = "󰋗",
+              timeout = 2000,
+            })
+            return
+          end
+        end
 
         require("undotree").toggle()
       end,
