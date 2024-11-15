@@ -12,7 +12,8 @@ return {
     {
       "<leader>rw",
       function()
-        require("nvim-tree.api").tree.toggle()
+        local utils = require("utils")
+        utils.smartToggle()
       end,
     },
   },
