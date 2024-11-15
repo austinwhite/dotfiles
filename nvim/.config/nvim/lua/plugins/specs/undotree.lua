@@ -25,7 +25,6 @@ return {
         local current_ft = vim.bo.filetype
 
         local ignored_filetypes = {
-          "undotree",
           "undotreeDiff",
           "qf",
           "TelescopePrompt",
