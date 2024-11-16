@@ -9,7 +9,7 @@ return {
     require("mini.files").setup({
       windows = {
         preview = true,
-        width_preview = 80,
+        width_preview = 50,
       },
     })
     local normal_bg = vim.api.nvim_get_hl(0, { name = "Normal" }).bg
