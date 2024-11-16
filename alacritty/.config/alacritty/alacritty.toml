@@ -109,7 +109,7 @@ multiplier = 3
 program = "/bin/zsh"
 
 [window]
-decorations = "transparent"
+decorations = "buttonless"
 dynamic_padding = true
 opacity = 1.0
 title = "Alacritty"
@@ -120,5 +120,5 @@ instance = "Alacritty"
 
 [window.padding]
 x = 5
-y = 25
+y = 0
 
