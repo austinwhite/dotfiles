@@ -2,6 +2,9 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- disable stausline
+vim.opt.laststatus = 0
+
 -- using nerd font
 vim.g.have_nerd_font = true
 
