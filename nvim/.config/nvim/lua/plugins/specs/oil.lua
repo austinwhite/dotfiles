@@ -8,7 +8,7 @@ return {
     {
       "<leader>-",
       function()
-        local utils = require("utils")
+        local utils = require("core.utils")
         utils.oil_toggle()
       end,
     },

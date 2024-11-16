@@ -20,7 +20,7 @@ return {
     {
       "<leader>rw",
       function()
-        local utils = require("utils")
+        local utils = require("core.utils")
         utils.minifiles_toggle()
       end,
     },
