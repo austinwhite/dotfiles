@@ -30,18 +30,17 @@ return {
 
     local border_opts = {
       border = {
-        { "╭", "CmpBorder" },
+        { "┌", "CmpBorder" },
         { "─", "CmpBorder" },
-        { "╮", "CmpBorder" },
+        { "┐", "CmpBorder" },
         { "│", "CmpBorder" },
-        { "╯", "CmpBorder" },
+        { "┘", "CmpBorder" },
         { "─", "CmpBorder" },
-        { "╰", "CmpBorder" },
+        { "└", "CmpBorder" },
         { "│", "CmpBorder" },
       },
       winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
     }
-
     cmp.setup({
       window = {
         completion = cmp.config.window.bordered(border_opts),
