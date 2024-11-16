@@ -1,3 +1,6 @@
+# for gitmux
+tap "arl/arl"
+
 brew "fzf"
 brew "stow"
 brew "zoxide"
@@ -18,6 +21,7 @@ brew "gnu-getopt"
 brew "grep"
 brew "postgresql"
 brew "nvm"
+brew "gitmux"
 
 cask "vlc"
 cask "slack"
