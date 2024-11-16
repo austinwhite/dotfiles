@@ -1,19 +1,18 @@
 return {
-  "nvim-tree/nvim-tree.lua",
-  version = "*",
-  lazy = false,
+  "echasnovski/mini.files",
+  version = false,
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
   config = function()
-    require("nvim-tree").setup({})
+    require("mini.files").setup()
   end,
   keys = {
     {
       "<leader>rw",
       function()
         local utils = require("utils")
-        utils.smartToggle()
+        utils.minifiles_toggle()
       end,
     },
   },
