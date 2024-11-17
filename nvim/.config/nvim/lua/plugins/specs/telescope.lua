@@ -47,6 +47,13 @@ return {
       desc = "Telescope help tags",
     },
     {
+      "<leader>fd",
+      function()
+        require("telescope.builtin").diagnostics({ bufnr = 0 })
+      end,
+      desc = "Telescope diagnostics",
+    },
+    {
       "<C-p>",
       function()
         require("telescope.builtin").git_files()
