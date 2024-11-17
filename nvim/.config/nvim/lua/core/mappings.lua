@@ -4,6 +4,8 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<TAB>", "<cmd>:bnext<CR>", {})
 vim.keymap.set("n", "<S-TAB>", "<cmd>:bprevious<CR>", {})
 vim.keymap.set("n", "<leader>bd", "<cmd>:bd<CR>", {})
+vim.keymap.set("n", "<leader>ba", "<cmd>:silent bufdo bd<CR>", {})
+vim.keymap.set("n", "<leader>bu", "<cmd>:silent %bd|e#|bd#<CR>", {})
 
 -- splits
 vim.keymap.set("n", "<Left>", ":vertical resize +3<CR>", {}) -- vertical resize
