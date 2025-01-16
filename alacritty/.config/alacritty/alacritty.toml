@@ -1,6 +1,6 @@
-import = ["/Users/austin/.config/alacritty/colors/one-dark.toml"]
+general.import = ["~/.config/alacritty/colors/one-dark.toml"]
 
-live_config_reload = true
+general.live_config_reload = true
 working_directory = "None"
 
 [cursor]
@@ -13,7 +13,7 @@ TERM = "xterm-256color"
 WINIT_X11_SCALE_FACTOR = "1"
 
 [font]
-size = 18
+size = 15
 
 [font.glyph_offset]
 x = 0
@@ -104,12 +104,11 @@ hide_when_typing = true
 history = 10000
 multiplier = 3
 
-[shell]
-# args = ["-l", "-c", "tmux -f ~/.config/tmux/.tmux.conf new-session -A -s main"]
-program = "/bin/zsh"
+[terminal]
+shell = "/bin/zsh"
 
 [window]
-decorations = "buttonless"
+decorations = "none"
 dynamic_padding = true
 opacity = 1.0
 title = "Alacritty"

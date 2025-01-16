@@ -6,6 +6,8 @@
     path = ~/.gitconfig-personal
 [includeIf "gitdir:~/.dotfiles/"]
     path = ~/.gitconfig-modern
+[includeIf "gitdir:~/*/FUTO/*/"]
+    path = ~/.gitconfig-FUTO
 [submodule]
     recurse = true
 [credential]
