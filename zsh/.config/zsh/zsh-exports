@@ -1,16 +1,15 @@
 # nvim config
 export NVIMCONFIG="$XDG_CONFIG_HOME/nvim"
 
-# deno
-export DENO_INSTALL="$HOME/.deno"
-
 # PATH
-export PATH="$HOME/miniconda3/bin:$PATH"        # conda
-export PATH="/var/lib/snapd/snap/bin:$PATH"     # snap packages
-export PATH="$DENO_INSTALL/bin:$PATH"           # deno
-export PATH="/opt/android-studio/bin:$PATH"     # android dev tools
-export PATH="/opt/homebrew/bin:$PATH"       	# homebrew
-export PATH="/opt/homebrew/opt:$PATH"       	# homebrew
+# conda
+export PATH="$HOME/miniconda3/bin:$PATH"
+# snaps
+export PATH="/var/lib/snapd/snap/bin:$PATH"
+# android studio
+export PATH="/opt/android-studio/bin:$PATH:$HOME/Android/Sdk/emulator"     
+# homebrew
+export PATH="/opt/homebrew/bin:/opt/homebrew/opt:$PATH"
 
 # node version manager
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
