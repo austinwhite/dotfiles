@@ -103,3 +103,7 @@ vim.opt.shortmess = "I"
 
 -- hide netrw banner
 vim.g.netrw_banner = 0
+
+-- spell checker
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"
