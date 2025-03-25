@@ -38,6 +38,7 @@ return {
       json = { "prettier" },
       yaml = { "prettier" },
       markdown = { "prettier" },
+      rust = { "rustfmt", lsp_format = "fallback" },
     },
   },
 }
