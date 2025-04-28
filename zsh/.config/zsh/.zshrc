@@ -1,7 +1,4 @@
-# enable Powerlevel10k instant prompt. should stay close to the top of ~/.config/zsh/.zshrc.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+eval "$(starship init zsh)"
 
 # add zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -12,9 +9,6 @@ if [ ! -d "$ZINIT_HOME" ]; then
 fi
 
 source "${ZINIT_HOME}/zinit.zsh"
-
-# prompt
-zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # load completions
 autoload -Uz compinit && compinit
