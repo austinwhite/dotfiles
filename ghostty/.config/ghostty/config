@@ -5,3 +5,9 @@
 theme = Github-Dark-Dimmed
 # theme = Github Dark
 
+
+window-padding-x = 5
+window-padding-balance = true
+
+
+
