@@ -1,21 +1,12 @@
--- disable netrw for alternative
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- disable stausline
 vim.opt.laststatus = 0
 
 -- hide ruler
 vim.opt.ruler = false
 
--- using nerd font
-vim.g.have_nerd_font = true
-
--- tabs are 4 spaces long
-vim.opt.tabstop = 2
-
 -- number of spaces to use when inserting a tab
 vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
 
 -- amount of rows for cmd output
 vim.opt.cmdheight = 1
@@ -100,9 +91,6 @@ vim.wo.signcolumn = "yes"
 
 -- hide welcome message
 vim.opt.shortmess = "I"
-
--- hide netrw banner
-vim.g.netrw_banner = 0
 
 -- spell checker
 vim.opt.spell = true
