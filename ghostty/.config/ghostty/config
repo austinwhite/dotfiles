@@ -1,13 +1,6 @@
-# theme = Operator Mono Dark
-# theme = Nightlion V2
-# theme = Neutron
-# theme = Github-Dark-Default
 theme = Github-Dark-Dimmed
-# theme = Github Dark
-
+background = #112630
 
 window-padding-x = 5
 window-padding-balance = true
-
-
 
