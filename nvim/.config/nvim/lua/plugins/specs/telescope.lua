@@ -6,7 +6,18 @@ return {
     require("telescope").setup({
       defaults = {
         prompt_prefix = "  ",
-        selection_caret = " ",
+        selection_caret = " ",
+      },
+      pickers = {
+        find_files = {
+          theme = "ivy",
+        },
+        buffers = {
+          theme = "ivy",
+        },
+        help_tags = {
+          theme = "ivy",
+        },
       },
     })
   end,
@@ -14,44 +25,31 @@ return {
     {
       "<leader>ff",
       function()
-        require("telescope.builtin").find_files(require("telescope.themes").get_ivy())
+        require("telescope.builtin").find_files()
       end,
       desc = "Telescope find files",
     },
     {
-      "<leader>fg",
-      function()
-        require("telescope.builtin").live_grep(require("telescope.themes").get_ivy())
-      end,
-      desc = "Telescope live grep",
-    },
-    {
-      "<leader>fs",
-      function()
-        require("telescope.builtin").grep_string(require("telescope.themes").get_ivy())
-      end,
-      desc = "Telescope grep string",
-    },
-    {
       "<leader>fb",
       function()
-        require("telescope.builtin").buffers(require("telescope.themes").get_ivy())
+        require("telescope.builtin").buffers()
       end,
       desc = "Telescope buffers",
     },
     {
-      "<leader>fh",
+      "<leader>en",
       function()
-        require("telescope.builtin").help_tags(require("telescope.themes").get_ivy())
+        require("telescope.builtin").find_files({
+          cwd = vim.fn.stdpath("config"),
+        })
       end,
-      desc = "Telescope help tags",
     },
     {
-      "<C-p>",
+      "<leader>fh",
       function()
-        require("telescope.builtin").git_files(require("telescope.themes").get_ivy())
+        require("telescope.builtin").help_tags()
       end,
-      desc = "Telescope git files",
+      desc = "Telescope help tags",
     },
   },
 }

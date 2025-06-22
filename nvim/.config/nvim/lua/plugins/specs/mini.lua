@@ -1,14 +1,9 @@
-local comment = {
-  "echasnovski/mini.comment",
-  version = false,
-}
-
 local files = {
   "echasnovski/mini.files",
   version = false,
   lazy = false,
   dependencies = {
-    "nvim-tree/nvim-web-devicons",
+    "echasnovski/mini.icons",
   },
   config = function()
     require("mini.files").setup({
@@ -23,7 +18,7 @@ local files = {
   end,
   keys = {
     {
-      "<leader>rw",
+      "<C-b>",
       function()
         local utils = require("core.utils")
         utils.minifiles_toggle()
@@ -79,4 +74,4 @@ local starter = {
   end,
 }
 
-return { comment, files, hipattern, notify, starter }
+return { files, hipattern, notify, starter }
