@@ -1,142 +1,26 @@
 {
-  "LuaSnip": {
-    "branch": "master",
-    "commit": "fb525166ccc30296fb3457441eb979113de46b00"
-  },
-  "cmp-nvim-lsp": {
-    "branch": "main",
-    "commit": "a8912b88ce488f411177fc8aed358b04dc246d7b"
-  },
-  "cmp-path": {
-    "branch": "main",
-    "commit": "c6635aae33a50d6010bf1aa756ac2398a2d54c32"
-  },
-  "cmp_luasnip": {
-    "branch": "master",
-    "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90"
-  },
-  "conform.nvim": {
-    "branch": "master",
-    "commit": "8132ec733eed3bf415b97b76797ca41b59f51d7d"
-  },
-  "fidget.nvim": {
-    "branch": "main",
-    "commit": "d9ba6b7bfe29b3119a610892af67602641da778e"
-  },
-  "friendly-snippets": {
-    "branch": "main",
-    "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175"
-  },
-  "gitsigns.nvim": {
-    "branch": "main",
-    "commit": "1b0350ab707713b2bc6c236151f1a324175347b1"
-  },
-  "lazy.nvim": {
-    "branch": "main",
-    "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a"
-  },
-  "lazygit.nvim": {
-    "branch": "main",
-    "commit": "4839ab642962cc76bb1bf278427dc4c59be15072"
-  },
-  "lsp_signature.nvim": {
-    "branch": "master",
-    "commit": "a793d02b6a5e639fa9d3f2a89a839fa688ab2d0a"
-  },
-  "lualine.nvim": {
-    "branch": "master",
-    "commit": "a94fc68960665e54408fe37dcf573193c4ce82c9"
-  },
-  "mason-lspconfig.nvim": {
-    "branch": "main",
-    "commit": "f54e3c11fc9ebfcfc27e696182b0295b071d0811"
-  },
-  "mason-tool-installer.nvim": {
-    "branch": "main",
-    "commit": "93a9ff9b34c91c0cb0f7de8d5f7e4abce51d8903"
-  },
-  "mason.nvim": {
-    "branch": "main",
-    "commit": "8024d64e1330b86044fed4c8494ef3dcd483a67c"
-  },
-  "mini.comment": {
-    "branch": "main",
-    "commit": "51c173dffa17dc14c81169deaeea430bd394ab51"
-  },
-  "mini.files": {
-    "branch": "main",
-    "commit": "90f11bfd3ecbed55c28cc836c3c62c19ecdf4de0"
-  },
-  "mini.hipatterns": {
-    "branch": "main",
-    "commit": "d71c21167d6bd5f21c9ecf90912c510f9edfc02b"
-  },
-  "mini.notify": {
-    "branch": "main",
-    "commit": "9996951977b503b8c9572a0bdb2c516f099701f9"
-  },
-  "mini.starter": {
-    "branch": "main",
-    "commit": "1c6467a6a46e02a0f6202de2f69ef6533fe95659"
-  },
-  "nvim-autopairs": {
-    "branch": "master",
-    "commit": "2647cce4cb64fb35c212146663384e05ae126bdf"
-  },
-  "nvim-cmp": {
-    "branch": "main",
-    "commit": "b5311ab3ed9c846b585c0c15b7559be131ec4be9"
-  },
-  "nvim-lspconfig": {
-    "branch": "master",
-    "commit": "69a1624aff5dc30dddd0c59d99a947b63c80bf2a"
-  },
-  "nvim-tmux-navigation": {
-    "branch": "main",
-    "commit": "4898c98702954439233fdaf764c39636681e2861"
-  },
-  "nvim-treesitter": {
-    "branch": "master",
-    "commit": "42fc28ba918343ebfd5565147a42a26580579482"
-  },
-  "nvim-ts-autotag": {
-    "branch": "main",
-    "commit": "a1d526af391f6aebb25a8795cbc05351ed3620b5"
-  },
-  "nvim-web-devicons": {
-    "branch": "master",
-    "commit": "19d6211c78169e78bab372b585b6fb17ad974e82"
-  },
-  "onedark.nvim": {
-    "branch": "master",
-    "commit": "11de4da47f3e69cb70c3ae9816bd8af166cbe121"
-  },
-  "plenary.nvim": {
-    "branch": "master",
-    "commit": "857c5ac632080dba10aae49dba902ce3abf91b35"
-  },
-  "smartcolumn.nvim": {
-    "branch": "main",
-    "commit": "92f3773af80d674f1eb61e112dca79e2fa449fd1"
-  },
-  "telescope.nvim": {
-    "branch": "master",
-    "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026"
-  },
-  "trouble.nvim": {
-    "branch": "main",
-    "commit": "85bedb7eb7fa331a2ccbecb9202d8abba64d37b3"
-  },
-  "typr": {
-    "branch": "main",
-    "commit": "bdd9ef7143702851edd1dac85101e0a537056d2f"
-  },
-  "undotree": {
-    "branch": "main",
-    "commit": "eab459ab87dd249617b5f7187bb69e614a083047"
-  },
-  "volt": {
-    "branch": "main",
-    "commit": "7b8c5e790120d9f08c8487dcb80692db6d2087a1"
-  }
+  "blink.cmp": { "branch": "main", "commit": "9bcb14b43852a6f2bfd5ac9ef29cb5cf09b1b39b" },
+  "conform.nvim": { "branch": "master", "commit": "8132ec733eed3bf415b97b76797ca41b59f51d7d" },
+  "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
+  "gitsigns.nvim": { "branch": "main", "commit": "1b0350ab707713b2bc6c236151f1a324175347b1" },
+  "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+  "lazydev.nvim": { "branch": "main", "commit": "2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c" },
+  "lualine.nvim": { "branch": "master", "commit": "a94fc68960665e54408fe37dcf573193c4ce82c9" },
+  "mason-lspconfig.nvim": { "branch": "main", "commit": "f54e3c11fc9ebfcfc27e696182b0295b071d0811" },
+  "mason.nvim": { "branch": "main", "commit": "8024d64e1330b86044fed4c8494ef3dcd483a67c" },
+  "mini.comment": { "branch": "main", "commit": "51c173dffa17dc14c81169deaeea430bd394ab51" },
+  "mini.files": { "branch": "main", "commit": "90f11bfd3ecbed55c28cc836c3c62c19ecdf4de0" },
+  "mini.hipatterns": { "branch": "main", "commit": "d71c21167d6bd5f21c9ecf90912c510f9edfc02b" },
+  "mini.notify": { "branch": "main", "commit": "9996951977b503b8c9572a0bdb2c516f099701f9" },
+  "mini.starter": { "branch": "main", "commit": "1c6467a6a46e02a0f6202de2f69ef6533fe95659" },
+  "nvim-autopairs": { "branch": "master", "commit": "2647cce4cb64fb35c212146663384e05ae126bdf" },
+  "nvim-lspconfig": { "branch": "master", "commit": "69a1624aff5dc30dddd0c59d99a947b63c80bf2a" },
+  "nvim-treesitter": { "branch": "master", "commit": "42fc28ba918343ebfd5565147a42a26580579482" },
+  "nvim-ts-autotag": { "branch": "main", "commit": "a1d526af391f6aebb25a8795cbc05351ed3620b5" },
+  "nvim-web-devicons": { "branch": "master", "commit": "19d6211c78169e78bab372b585b6fb17ad974e82" },
+  "onedark.nvim": { "branch": "master", "commit": "11de4da47f3e69cb70c3ae9816bd8af166cbe121" },
+  "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
+  "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
+  "trouble.nvim": { "branch": "main", "commit": "85bedb7eb7fa331a2ccbecb9202d8abba64d37b3" },
+  "undotree": { "branch": "main", "commit": "eab459ab87dd249617b5f7187bb69e614a083047" }
 }
