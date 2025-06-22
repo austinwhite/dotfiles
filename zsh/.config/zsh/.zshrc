@@ -94,10 +94,6 @@ tmux-window-name() {
     fi
 }
 
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-
-
 # pnpm
 export PNPM_HOME="/Users/austin/.local/share/pnpm"
 case ":$PATH:" in
