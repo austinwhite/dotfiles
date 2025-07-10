@@ -8,6 +8,7 @@ return {
         python = { "black" },
         rust = { "rustfmt" },
         javascript = { "prettierd", "prettier", stop_after_first = true },
+        markdown = { "prettierd", "prettier", stop_after_first = true },
       },
       formatters = {
         black = {

@@ -33,14 +33,18 @@ cask "zed"
 cask "visual-studio-code"
 cask "cursor"
 cask "spotify"
-cask "alacritty"
 cask "ghostty"
 cask "guitar-pro"
 cask "hiddenbar"
 cask "google-chrome"
 cask "figma"
 cask "tailscale"
-cask "raycast"
 cask "lm-studio"
 cask "blender"
 cask "grayjay"
+cask "hammerspoon"
+
+# manual install required
+# - logic pro
+# - final cut
+# - neural dsp plugins
