@@ -23,7 +23,7 @@ local appBindings = {
 	{ "1", "Ghostty" },
 	{ "2", "Cursor" },
 	{ "3", "Google Chrome" },
-	-- { "4", "" },
+	{ "4", "Logic Pro" },
 	-- { "5", "" },
 	-- { "6", "" },
 	-- { "7", "" },
