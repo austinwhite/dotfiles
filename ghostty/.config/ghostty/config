@@ -4,3 +4,7 @@ background = #1F2329
 window-padding-x = 5
 window-padding-balance = true
 
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+
+
