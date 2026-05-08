@@ -1,13 +1,9 @@
-[includeIf "gitdir:~/**/FUTO/**"]
-    path = ~/.gitconfig-futo
-[includeIf "gitdir:~/**/Modern/**"]
-    path = ~/.gitconfig-modern
-[includeIf "gitdir:~/**/Nomadik/**"]
-    path = ~/.gitconfig-nomadik
-[includeIf "gitdir:~/**/Personal/**"]
+[includeIf "gitdir:~/**/Projects/Personal/**"]
     path = ~/.gitconfig-personal
 [includeIf "gitdir:~/.dotfiles/"]
     path = ~/.gitconfig-personal
+# [includeIf "gitdir:~/**/Projects/<Project>/**"]
+#     path = ~/.gitconfig-[project]
 [submodule]
     recurse = true
 [credential]
