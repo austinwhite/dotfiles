@@ -11,10 +11,32 @@ local files = {
         preview = true,
         width_preview = 50,
       },
+      options = {
+        use_as_default_explorer = true,
+      },
     })
-    local normal_bg = vim.api.nvim_get_hl(0, { name = "Normal" }).bg
-    vim.api.nvim_set_hl(0, "MiniFilesBorder", { fg = "#535965", bg = normal_bg })
-    vim.api.nvim_set_hl(0, "MiniFilesNormal", { bg = normal_bg })
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "MiniFilesWindowOpen",
+      callback = function(args)
+        local config = vim.api.nvim_win_get_config(args.data.win_id)
+        config.border = {
+          { "╭", "NormalFloat" },
+          { "─", "NormalFloat" },
+          { "╮", "NormalFloat" },
+          { "│", "NormalFloat" },
+          { "╯", "NormalFloat" },
+          { "─", "NormalFloat" },
+          { "╰", "NormalFloat" },
+          { "│", "NormalFloat" },
+        }
+        vim.api.nvim_win_set_config(args.data.win_id, config)
+      end,
+    })
+
+    local normal_float = vim.api.nvim_get_hl(0, { name = "NormalFloat" })
+    vim.api.nvim_set_hl(0, "MiniFilesBorder", { fg = normal_float.fg, bg = normal_float.bg })
+    vim.api.nvim_set_hl(0, "MiniFilesBorderModified", { fg = normal_float.fg, bg = normal_float.bg })
+    vim.api.nvim_set_hl(0, "MiniFilesNormal", { fg = normal_float.fg, bg = normal_float.bg })
   end,
   keys = {
     {
