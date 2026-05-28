@@ -14,7 +14,20 @@ return {
     },
   },
   config = function()
-    require("mason").setup()
+    require("mason").setup({
+      ui = {
+        border = {
+          { "╭", "NormalFloat" },
+          { "─", "NormalFloat" },
+          { "╮", "NormalFloat" },
+          { "│", "NormalFloat" },
+          { "╯", "NormalFloat" },
+          { "─", "NormalFloat" },
+          { "╰", "NormalFloat" },
+          { "│", "NormalFloat" },
+        },
+      },
+    })
 
     local capabilities = require("blink.cmp").get_lsp_capabilities()
 
