@@ -15,41 +15,17 @@ local files = {
         use_as_default_explorer = true,
       },
     })
-    local backdrop = nil
-
     vim.api.nvim_create_autocmd("User", {
       pattern = "MiniFilesExplorerOpen",
       callback = function()
-        if backdrop and vim.api.nvim_win_is_valid(backdrop) then
-          return
-        end
-
-        local buf = vim.api.nvim_create_buf(false, true)
-        backdrop = vim.api.nvim_open_win(buf, false, {
-          relative = "editor",
-          row = 0,
-          col = 0,
-          width = vim.o.columns,
-          height = vim.o.lines,
-          focusable = false,
-          style = "minimal",
-          border = "none",
-          zindex = 1,
-        })
-
-        vim.api.nvim_set_hl(0, "MiniFilesBackdrop", { bg = "#000000" })
-        vim.wo[backdrop].winhighlight = "Normal:MiniFilesBackdrop"
-        vim.wo[backdrop].winblend = 55
+        require("core.utils").open_backdrop("mini-files", { hl = "MiniFilesBackdrop" })
       end,
     })
 
     vim.api.nvim_create_autocmd("User", {
       pattern = "MiniFilesExplorerClose",
       callback = function()
-        if backdrop and vim.api.nvim_win_is_valid(backdrop) then
-          vim.api.nvim_win_close(backdrop, true)
-        end
-        backdrop = nil
+        require("core.utils").close_backdrop("mini-files")
       end,
     })
 
