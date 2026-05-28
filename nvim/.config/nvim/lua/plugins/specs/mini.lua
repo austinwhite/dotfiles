@@ -33,10 +33,6 @@ local files = {
       end,
     })
 
-    local normal_float = vim.api.nvim_get_hl(0, { name = "NormalFloat" })
-    vim.api.nvim_set_hl(0, "MiniFilesBorder", { fg = normal_float.fg, bg = normal_float.bg })
-    vim.api.nvim_set_hl(0, "MiniFilesBorderModified", { fg = normal_float.fg, bg = normal_float.bg })
-    vim.api.nvim_set_hl(0, "MiniFilesNormal", { fg = normal_float.fg, bg = normal_float.bg })
   end,
   keys = {
     {
