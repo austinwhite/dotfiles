@@ -89,8 +89,8 @@ vim.opt.showmode = false
 -- highlight line where cursor is
 vim.wo.cursorline = true
 
--- show sign column at all times
-vim.wo.signcolumn = "yes"
+-- show sign column at all times, with room for diagnostics and other signs
+vim.opt.signcolumn = "yes:2"
 
 -- hide welcome message
 vim.opt.shortmess:append("I")
