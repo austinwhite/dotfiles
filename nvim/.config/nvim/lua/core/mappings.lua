@@ -8,6 +8,11 @@ vim.keymap.set("n", "<leader>ba", "<cmd>silent bufdo bd<CR>", { desc = "Delete a
 vim.keymap.set("n", "<leader>bu", "<cmd>silent %bd|e#|bd#<CR>", { desc = "Delete other buffers" })
 
 -- splits
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
+
 vim.keymap.set("n", "<Left>", "<cmd>vertical resize +3<CR>", { desc = "Increase split width" })
 vim.keymap.set("n", "<Right>", "<cmd>vertical resize -3<CR>", { desc = "Decrease split width" })
 vim.keymap.set("n", "<Up>", "<cmd>resize +3<CR>", { desc = "Increase split height" })
