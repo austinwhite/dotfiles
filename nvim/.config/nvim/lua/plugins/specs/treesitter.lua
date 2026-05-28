@@ -1,6 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  lazy = "false", -- does not support lazy loading
+  branch = "master", -- legacy API; main no longer provides nvim-treesitter.configs
+  lazy = false, -- does not support lazy loading
   build = ":TSUpdate",
   config = function()
     require("nvim-treesitter.configs").setup({

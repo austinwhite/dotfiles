@@ -59,19 +59,4 @@ local notify = {
   end,
 }
 
-local starter = {
-  "echasnovski/mini.starter",
-  version = false,
-  config = function()
-    -- TODO: make a plugin that serves a random haiku at some period of time (configurable)
-    local haiku = "Heavy heart, glass eyes.\nBindle over my shoulder.\nOn to the next one."
-    require("mini.starter").setup({
-      footer = haiku,
-    })
-    local footer_fg = vim.api.nvim_get_hl(0, { name = "NonText" }).fg
-    vim.api.nvim_set_hl(0, "MiniStarterHeader", { link = "MoreMsg" })
-    vim.api.nvim_set_hl(0, "MiniStarterFooter", { fg = footer_fg })
-  end,
-}
-
-return { files, hipattern, notify, starter }
+return { files, hipattern, notify }
