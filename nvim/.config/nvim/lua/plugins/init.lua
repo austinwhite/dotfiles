@@ -19,4 +19,17 @@ require("lazy").setup({
     { import = "plugins.specs" },
   },
   checker = { enabled = true },
+  ui = {
+    border = {
+      { "╭", "NormalFloat" },
+      { "─", "NormalFloat" },
+      { "╮", "NormalFloat" },
+      { "│", "NormalFloat" },
+      { "╯", "NormalFloat" },
+      { "─", "NormalFloat" },
+      { "╰", "NormalFloat" },
+      { "│", "NormalFloat" },
+    },
+    backdrop = 55,
+  },
 })
