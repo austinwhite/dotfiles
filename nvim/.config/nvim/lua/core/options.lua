@@ -1,5 +1,5 @@
--- disable stausline
-vim.opt.laststatus = 0
+-- use a global statusline
+vim.opt.laststatus = 3
 
 -- hide ruler
 vim.opt.ruler = false
@@ -79,6 +79,9 @@ vim.opt.splitbelow = true
 
 -- force all vertical splits to go to the right of current window
 vim.opt.splitright = true
+
+-- show a visible separator between split windows
+vim.opt.fillchars:append({ vert = "│" })
 
 -- hide mode from cmdoutput areaa
 vim.opt.showmode = false

@@ -3,6 +3,8 @@ local augroup = vim.api.nvim_create_augroup("UserAutoCommands", { clear = true }
 local function apply_float_highlights()
   local normal_float = vim.api.nvim_get_hl(0, { name = "NormalFloat" })
 
+  vim.api.nvim_set_hl(0, "WinSeparator", { fg = normal_float.fg })
+
   for _, group in ipairs({
     "TelescopeNormal",
     "TelescopeBorder",
