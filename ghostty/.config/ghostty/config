@@ -1,10 +1,5 @@
-theme = "Github Dark Dimmed"
-background = #1F2329
+theme = "Github Dark Default"
 
 window-padding-x = 5
 window-padding-balance = true
-
-keybind = global:ctrl+grave_accent=toggle_quick_terminal
-
-
 
