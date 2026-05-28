@@ -1,6 +1,18 @@
 return {
   "folke/trouble.nvim",
-  opts = {},
+  opts = {
+    modes = {
+      diagnostics = {
+        win = { position = "right", size = 75 },
+      },
+      qflist = {
+        win = { position = "right", size = 75 },
+      },
+      loclist = {
+        win = { position = "right", size = 75 },
+      },
+    },
+  },
   keys = {
     {
       "<leader>xx",
@@ -26,7 +38,7 @@ return {
     {
       "<leader>cl",
       function()
-        require("trouble").toggle("lsp", { focus = false, win = { position = "right" } })
+        require("trouble").toggle("lsp", { focus = false, win = { position = "right", size = 75 } })
       end,
       desc = "LSP Definitions / references / ... (Trouble)",
     },
