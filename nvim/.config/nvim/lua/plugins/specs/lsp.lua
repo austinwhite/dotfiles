@@ -45,7 +45,8 @@ return {
       },
     })
 
-    vim.opt.signcolumn = "yes"
+    -- Keep room for diagnostics alongside other signs like git/change signs.
+    vim.opt.signcolumn = "yes:2"
 
     local signs = {
       [vim.diagnostic.severity.ERROR] = " ",
@@ -57,7 +58,12 @@ return {
     vim.diagnostic.config({
       underline = false,
       virtual_text = true,
-      signs = { text = signs },
+      update_in_insert = true,
+      severity_sort = true,
+      signs = {
+        text = signs,
+        priority = 100,
+      },
     })
   end,
 }
