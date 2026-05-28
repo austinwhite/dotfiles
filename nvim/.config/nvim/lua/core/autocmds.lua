@@ -9,7 +9,6 @@ local function apply_float_highlights()
     "TelescopeNormal",
     "TelescopeBorder",
     "TelescopePromptNormal",
-    "TelescopePromptBorder",
     "TelescopeResultsNormal",
     "TelescopeResultsBorder",
     "TelescopePreviewNormal",
@@ -21,6 +20,9 @@ local function apply_float_highlights()
   }) do
     vim.api.nvim_set_hl(0, group, { fg = normal_float.fg, bg = normal_float.bg })
   end
+
+  local accent = vim.api.nvim_get_hl(0, { name = "Title" })
+  vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = accent.fg, bg = normal_float.bg })
 end
 
 apply_float_highlights()
