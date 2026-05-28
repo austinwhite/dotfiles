@@ -18,7 +18,7 @@ vim.opt.timeoutlen = 325
 vim.opt.updatetime = 300
 
 -- number of spaces to use for indenting
-vim.opt.softtabstop = 4
+vim.opt.softtabstop = 2
 
 -- expand tabs into spaces
 vim.opt.expandtab = true
@@ -66,7 +66,7 @@ vim.opt.sidescrolloff = 5
 vim.opt.undofile = true
 
 -- where to store undo file
-vim.opt.undodir = vim.fn.stdpath("config") .. "/undo"
+vim.opt.undodir = vim.fn.stdpath("state") .. "/undo"
 
 -- true color
 vim.opt.termguicolors = true
@@ -90,8 +90,7 @@ vim.wo.cursorline = true
 vim.wo.signcolumn = "yes"
 
 -- hide welcome message
-vim.opt.shortmess = "I"
+vim.opt.shortmess:append("I")
 
--- spell checker
-vim.opt.spell = true
+-- spell checker language; enabled per-filetype in autocmds
 vim.opt.spelllang = "en_us"

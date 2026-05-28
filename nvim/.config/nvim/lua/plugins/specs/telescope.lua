@@ -7,6 +7,9 @@ return {
       defaults = {
         prompt_prefix = "  ",
         selection_caret = " ",
+        preview = {
+          treesitter = false,
+        },
       },
       extensions = {
         fzf = {},
@@ -19,45 +22,31 @@ return {
     {
       "<leader>ff",
       function()
-        require("telescope.builtin").find_files(require("telescope.themes").get_ivy())
+        require("telescope.builtin").find_files(require("telescope.themes"))
       end,
     },
     {
       "<leader>fb",
       function()
-        require("telescope.builtin").buffers(require("telescope.themes").get_ivy())
-      end,
-    },
-    {
-      "<leader>en",
-      function()
-        require("telescope.builtin").find_files(require("telescope.themes").get_ivy({
-          cwd = vim.fn.stdpath("config"),
-        }))
+        require("telescope.builtin").buffers(require("telescope.themes"))
       end,
     },
     {
       "<leader>fh",
       function()
-        require("telescope.builtin").help_tags(require("telescope.themes").get_ivy())
-      end,
-    },
-    {
-      "<leader>fr",
-      function()
-        require("telescope.builtin").lsp_references(require("telescope.themes").get_ivy())
+        require("telescope.builtin").help_tags(require("telescope.themes"))
       end,
     },
     {
       "<leader>fg",
       function()
-        require("telescope.builtin").live_grep(require("telescope.themes").get_ivy())
+        require("telescope.builtin").live_grep(require("telescope.themes"))
       end,
     },
     {
       "<leader>fs",
       function()
-        require("telescope.builtin").lsp_document_symbols(require("telescope.themes").get_ivy())
+        require("telescope.builtin").lsp_document_symbols(require("telescope.themes"))
       end,
     },
   },
