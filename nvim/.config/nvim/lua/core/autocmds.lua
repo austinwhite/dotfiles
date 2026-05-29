@@ -33,6 +33,14 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   callback = apply_float_highlights,
 })
 
+vim.api.nvim_create_autocmd("VimLeavePre", {
+  group = augroup,
+  desc = "Reset terminal background",
+  callback = function()
+    require("core.utils").reset_ghostty_background()
+  end,
+})
+
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = augroup,
   desc = "Highlight yanked text",
