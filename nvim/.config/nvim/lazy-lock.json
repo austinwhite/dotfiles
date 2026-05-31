@@ -11,7 +11,7 @@
   "lualine.nvim": { "branch": "master", "commit": "131a558e13f9f28b15cd235557150ccb23f89286" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "7b01e2974a47d489bb92f47a41e4c0088ea8f86e" },
   "mason.nvim": { "branch": "main", "commit": "bb639d4bf385a4d89f478b83af4d770be05ab7eb" },
-  "mini.files": { "branch": "main", "commit": "423d6b5afb7a94e658950d470957f830d43dd41e" },
+  "mini.files": { "branch": "main", "commit": "17b58c3227cffe47ded884c234aa61dab492363a" },
   "mini.hipatterns": { "branch": "main", "commit": "e25cf080aae092a651a92fa5e477f64a61adbebf" },
   "mini.icons": { "branch": "main", "commit": "520995f1d75da0e4cc901ee95080b1ff2bc46b94" },
   "minintro.nvim": { "branch": "master", "commit": "45d146839bafbc556aec4b0d6af5d501bfa653e8" },
