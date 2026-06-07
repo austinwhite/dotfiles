@@ -1,6 +1,3 @@
--- TODO:
--- - handle when app is running, but has no visible window.
-
 local config = {
 	fontName = "JetBrainsMono Nerd Font",
 	fontSize = 18,
@@ -21,15 +18,15 @@ local config = {
 
 local appBindings = {
 	{ "1", "Ghostty" },
-	{ "2", "Cursor" },
-	{ "3", "Google Chrome" },
-	{ "4", "Figma" },
+	{ "2", "Google Chrome" },
+	-- { "3", "" },
+	-- { "4", "" },
 	-- { "5", "" },
 	-- { "6", "" },
-	{ "7", "Guitar Pro" },
-	{ "8", "Logic Pro" },
-	{ "9", "Spotify" },
-	{ "0", "Discord" },
+	-- { "7", "" },
+	-- { "8", "" },
+	-- { "9", "" },
+	-- { "0", "" },
 }
 
 local function buildAppBindingMap(bindings)
