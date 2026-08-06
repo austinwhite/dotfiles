@@ -25,8 +25,8 @@ local appBindings = {
 	-- { "6", "" },
 	-- { "7", "" },
 	-- { "8", "" },
-	-- { "9", "" },
-	-- { "0", "" },
+	{ "9", "Claude" },
+	{ "0", "ChatGPT" },
 }
 
 local function buildAppBindingMap(bindings)
@@ -42,29 +42,38 @@ end
 
 local appBindingMap = buildAppBindingMap(appBindings)
 
+local function focusApp(appName, frame)
+	local app = hs.application.find(appName)
+	if app then
+		app:activate()
+		app:unhide()
+	else
+		hs.application.launchOrFocus(appName)
+		hs.timer.doAfter(1, function()
+			local launchedApp = hs.application.find(appName)
+			if launchedApp then
+				local win = launchedApp:mainWindow()
+				if win and frame then
+					win:setFrame(frame)
+				elseif win then
+					win:maximize()
+				end
+			end
+		end)
+		return
+	end
+
+	local win = app:mainWindow()
+	if win and frame then
+		win:setFrame(frame)
+	elseif win then
+		win:maximize()
+	end
+end
+
 local function bindAppHotkey(key, appName)
 	hs.hotkey.bind({ "alt" }, key, function()
-		local app = hs.application.find(appName)
-		if app then
-			app:activate()
-			app:unhide()
-		else
-			hs.application.launchOrFocus(appName)
-			hs.timer.doAfter(1, function()
-				local launchedApp = hs.application.find(appName)
-				if launchedApp then
-					local win = launchedApp:mainWindow()
-					if win then
-						win:maximize()
-					end
-				end
-			end)
-			return
-		end
-		local win = app:mainWindow()
-		if win then
-			win:maximize()
-		end
+		focusApp(appName)
 	end)
 end
 
@@ -79,17 +88,7 @@ hs.hotkey.bind({ "alt", "shift" }, ".", function()
 	for _, binding in ipairs(appBindings) do
 		local appName = binding[2]
 		if appName and appName ~= "" then
-			local app = hs.application.find(appName)
-			if not app then
-				hs.application.launchOrFocus(appName)
-			else
-				app:activate()
-				app:unhide()
-				local win = app:mainWindow()
-				if win then
-					win:maximize()
-				end
-			end
+			focusApp(appName)
 		end
 	end
 end)
