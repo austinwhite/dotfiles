@@ -30,6 +30,6 @@ require("lazy").setup({
       { "╰", "NormalFloat" },
       { "│", "NormalFloat" },
     },
-    backdrop = 55,
+    backdrop = 100,
   },
 })

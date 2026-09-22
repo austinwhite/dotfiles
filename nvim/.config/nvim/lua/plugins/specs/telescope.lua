@@ -3,25 +3,7 @@ return {
   tag = "0.1.8",
   dependencies = { "nvim-lua/plenary.nvim", { "nvim-telescope/telescope-fzf-native.nvim", build = "make" } },
   config = function()
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "TelescopeFindPre",
-      callback = function()
-        require("core.utils").open_backdrop("telescope", { hl = "TelescopeBackdrop" })
-      end,
-    })
-
-    vim.api.nvim_create_autocmd("FileType", {
-      pattern = "TelescopePrompt",
-      callback = function(args)
-        vim.api.nvim_create_autocmd("BufWipeout", {
-          buffer = args.buf,
-          once = true,
-          callback = function()
-            require("core.utils").close_backdrop("telescope")
-          end,
-        })
-      end,
-    })
+    local actions = require("telescope.actions")
 
     require("telescope").setup({
       defaults = {
@@ -29,6 +11,15 @@ return {
         selection_caret = " ",
         preview = {
           treesitter = false,
+        },
+        mappings = {
+          i = {
+            ["<Esc><Esc>"] = actions.close,
+          },
+          n = {
+            ["<Esc><Esc>"] = actions.close,
+            q = actions.close,
+          },
         },
       },
       extensions = {

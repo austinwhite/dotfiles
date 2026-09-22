@@ -7,6 +7,9 @@ local files = {
   },
   config = function()
     require("mini.files").setup({
+      mappings = {
+        close = "<Esc><Esc>",
+      },
       windows = {
         preview = true,
         width_preview = 50,
@@ -15,20 +18,6 @@ local files = {
         use_as_default_explorer = true,
       },
     })
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "MiniFilesExplorerOpen",
-      callback = function()
-        require("core.utils").open_backdrop("mini-files", { hl = "MiniFilesBackdrop" })
-      end,
-    })
-
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "MiniFilesExplorerClose",
-      callback = function()
-        require("core.utils").close_backdrop("mini-files")
-      end,
-    })
-
     vim.api.nvim_create_autocmd("User", {
       pattern = "MiniFilesWindowOpen",
       callback = function(args)
