@@ -32,4 +32,5 @@ alias -- -='cd -'
 # Colorize grep
 alias grep='grep --color=auto'
 
+# Source zsh config
 alias zshsource='source "$ZDOTDIR/.zshrc"'

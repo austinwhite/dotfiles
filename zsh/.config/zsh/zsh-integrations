@@ -1,0 +1,16 @@
+# fzf
+if command -v fzf >/dev/null 2>&1; then
+  eval "$(fzf --zsh)"
+fi
+
+# zoxide
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
+
+# tmux window naming
+tmux-window-name() {
+  if [[ -n "$TMUX" && -n "$TMUX_PLUGIN_MANAGER_PATH" ]]; then
+    "$TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py" &
+  fi
+}

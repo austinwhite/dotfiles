@@ -1,0 +1,18 @@
+# Completion initialization
+autoload -Uz compinit
+compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
+
+# Replay plugin compdefs after compinit is available
+(( $+commands[zinit] )) && zinit cdreplay -q
+
+# Completion/search widgets
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+[[ -n "$LS_COLORS" ]] && zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu select
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color=auto $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color=auto $realpath'
