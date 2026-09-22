@@ -24,14 +24,8 @@ SAVEHIST=$HISTSIZE
 HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/zsh/history"
 mkdir -p "${HISTFILE:h}"
 
-setopt append_history
-setopt share_history
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
-unsetopt beep
+# Options
+[[ -r "$ZDOTDIR/zsh-options" ]] && source "$ZDOTDIR/zsh-options"
 
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
