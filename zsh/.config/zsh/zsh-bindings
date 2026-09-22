@@ -1,0 +1,10 @@
+# Line editor mode
+bindkey -e
+
+# History search
+bindkey '^p' up-line-or-beginning-search
+bindkey '^n' down-line-or-beginning-search
+
+# Editing
+bindkey '^[w' kill-region
+bindkey '^H' backward-kill-word # ctrl+backspace: delete previous word

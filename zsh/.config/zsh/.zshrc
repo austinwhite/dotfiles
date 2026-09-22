@@ -1,5 +1,5 @@
 # Prompt
-command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
+[[ -r "$ZDOTDIR/zsh-prompt" ]] && source "$ZDOTDIR/zsh-prompt"
 
 # Plugins
 [[ -r "$ZDOTDIR/zsh-plugins" ]] && source "$ZDOTDIR/zsh-plugins"
@@ -8,16 +8,15 @@ command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
 autoload -Uz compinit
 compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
 
+# Replay plugin compdefs after compinit is available
+(( $+commands[zinit] )) && zinit cdreplay -q
+
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
 # Keybindings
-bindkey -e
-bindkey '^p' up-line-or-beginning-search
-bindkey '^n' down-line-or-beginning-search
-bindkey '^[w' kill-region
-bindkey '^H' backward-kill-word # ctrl+backspace: delete previous word
+[[ -r "$ZDOTDIR/zsh-bindings" ]] && source "$ZDOTDIR/zsh-bindings"
 
 # History
 HISTSIZE=5000
