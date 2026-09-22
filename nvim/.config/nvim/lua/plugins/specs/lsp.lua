@@ -34,7 +34,8 @@ return {
 
     require("mason-lspconfig").setup({
       automatic_enable = {
-        exclude = { "rust_analyzer" },
+        -- rustaceanvim and typscript_tools manage these lsp's
+        exclude = { "rust_analyzer", "ts_ls" },
       },
       ensure_installed = {
         "lua_ls",
