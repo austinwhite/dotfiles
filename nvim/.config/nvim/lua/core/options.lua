@@ -1,6 +1,3 @@
--- use a global statusline
-vim.opt.laststatus = 3
-
 -- hide ruler
 vim.opt.ruler = false
 

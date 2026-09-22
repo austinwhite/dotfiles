@@ -46,9 +46,6 @@ return {
       },
     })
 
-    -- Keep room for diagnostics alongside other signs like git/change signs.
-    vim.opt.signcolumn = "yes:2"
-
     local signs = {
       [vim.diagnostic.severity.ERROR] = " ",
       [vim.diagnostic.severity.WARN] = " ",
