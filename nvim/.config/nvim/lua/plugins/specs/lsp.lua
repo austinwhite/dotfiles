@@ -16,6 +16,7 @@ return {
   config = function()
     require("mason").setup({
       ui = {
+        backdrop = 100,
         border = {
           { "╭", "NormalFloat" },
           { "─", "NormalFloat" },
