@@ -1,14 +1,14 @@
 # Prompt
-[[ -r "$ZDOTDIR/zsh-prompt" ]] && source "$ZDOTDIR/zsh-prompt"
+[[ -r "$ZDOTDIR/prompt" ]] && source "$ZDOTDIR/prompt"
 
 # Plugins
-[[ -r "$ZDOTDIR/zsh-plugins" ]] && source "$ZDOTDIR/zsh-plugins"
+[[ -r "$ZDOTDIR/plugins" ]] && source "$ZDOTDIR/plugins"
 
 # Completion
-[[ -r "$ZDOTDIR/zsh-completion" ]] && source "$ZDOTDIR/zsh-completion"
+[[ -r "$ZDOTDIR/completion" ]] && source "$ZDOTDIR/completion"
 
 # Keybindings
-[[ -r "$ZDOTDIR/zsh-bindings" ]] && source "$ZDOTDIR/zsh-bindings"
+[[ -r "$ZDOTDIR/bindings" ]] && source "$ZDOTDIR/bindings"
 
 # History
 HISTSIZE=5000
@@ -17,18 +17,17 @@ HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/zsh/history"
 mkdir -p "${HISTFILE:h}"
 
 # Options
-[[ -r "$ZDOTDIR/zsh-options" ]] && source "$ZDOTDIR/zsh-options"
+[[ -r "$ZDOTDIR/options" ]] && source "$ZDOTDIR/options"
 
 # Local config modules
 for file in \
-  "$ZDOTDIR/zsh-functions" \
-  "$ZDOTDIR/zsh-exports" \
-  "$ZDOTDIR/zsh-aliases" \
+  "$ZDOTDIR/functions" \
+  "$ZDOTDIR/exports" \
+  "$ZDOTDIR/platform" \
+  "$ZDOTDIR/aliases" \
+  "$ZDOTDIR/integrations" \
   "$ZDOTDIR/local.zsh"
 do
   [[ -r "$file" ]] && source "$file"
 done
 unset file
-
-# Shell integrations
-[[ -r "$ZDOTDIR/zsh-integrations" ]] && source "$ZDOTDIR/zsh-integrations"

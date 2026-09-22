@@ -1,0 +1,39 @@
+PLUGIN_DIR="${ZDOTDIR:-$HOME/.config/zsh}/plugins"
+
+plugin_load() {
+  local repo="$1"
+  local file="$2"
+  local name="${repo:t}"
+  local plugin_path="$PLUGIN_DIR/$name"
+
+  if [[ ! -d "$plugin_path" ]]; then
+    mkdir -p "$PLUGIN_DIR"
+    echo "Installing $repo..."
+    git clone --depth=1 "https://github.com/$repo" "$plugin_path" || {
+      print -u2 "ERROR: failed to install $repo"
+      return 1
+    }
+  fi
+
+  if [[ -r "$plugin_path/$file" ]]; then
+    source "$plugin_path/$file"
+  else
+    print -u2 "ERROR: plugin file not found: $plugin_path/$file"
+    return 1
+  fi
+}
+
+plugin_update() {
+  local dir
+  for dir in "$PLUGIN_DIR"/*/; do
+    [[ -d "$dir/.git" ]] || continue
+    echo "Updating ${dir:t}..."
+    git -C "$dir" pull --ff-only
+  done
+}
+
+plugin_load "zsh-users/zsh-completions" "zsh-completions.plugin.zsh"
+plugin_load "zsh-users/zsh-autosuggestions" "zsh-autosuggestions.zsh"
+plugin_load "hlissner/zsh-autopair" "autopair.zsh"
+plugin_load "Aloxaf/fzf-tab" "fzf-tab.plugin.zsh"
+plugin_load "zdharma-continuum/fast-syntax-highlighting" "fast-syntax-highlighting.plugin.zsh"

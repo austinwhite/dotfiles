@@ -1,9 +1,10 @@
 # Completion initialization
-autoload -Uz compinit
-compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
+zcompdump="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
+mkdir -p "${zcompdump:h}"
 
-# Replay plugin compdefs after compinit is available
-(( $+commands[zinit] )) && zinit cdreplay -q
+autoload -Uz compinit
+compinit -d "$zcompdump"
+unset zcompdump
 
 # Completion/search widgets
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search

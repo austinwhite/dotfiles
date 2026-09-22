@@ -1,0 +1,19 @@
+# Mac
+if command -v brew >/dev/null 2>&1; then
+  HOMEBREW_PREFIX="$(brew --prefix 2>/dev/null)"
+
+  if [[ -n "$HOMEBREW_PREFIX" ]]; then
+    path_prepend "$HOMEBREW_PREFIX/bin"
+    path_prepend "$HOMEBREW_PREFIX/sbin"
+  fi
+
+  unset HOMEBREW_PREFIX
+fi
+
+# Debian
+if command -v apt-get >/dev/null 2>&1; then
+fi
+
+# Arch
+if command -v pacman >/dev/null 2>&1; then
+fi
