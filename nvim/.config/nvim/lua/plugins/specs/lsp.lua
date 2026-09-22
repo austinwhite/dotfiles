@@ -32,13 +32,16 @@ return {
 
     local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-    vim.lsp.config("*", {
-      capabilities = capabilities,
-    })
-
     require("mason-lspconfig").setup({
-      automatic_enable = true,
-      ensure_installed = {},
+      automatic_enable = {
+        exclude = { "rust_analyzer" },
+      },
+      ensure_installed = {
+        "lua_ls",
+        "pyright",
+        "rust_analyzer",
+        "ts_ls",
+      },
       handlers = {
         function(server_name)
           require("lspconfig")[server_name].setup({ capabilities = capabilities })
