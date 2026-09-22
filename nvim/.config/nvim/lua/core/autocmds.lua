@@ -13,9 +13,6 @@ local function apply_float_highlights()
     "TelescopeResultsBorder",
     "TelescopePreviewNormal",
     "TelescopePreviewBorder",
-    "MiniFilesBorder",
-    "MiniFilesBorderModified",
-    "MiniFilesNormal",
     "LazyNormal",
   }) do
     vim.api.nvim_set_hl(0, group, { fg = normal_float.fg, bg = normal_float.bg })
