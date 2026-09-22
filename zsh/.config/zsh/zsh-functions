@@ -1,15 +1,18 @@
-# create a new directory and enter it
-function mkd() {
-  mkdir -p "$@" && cd "$_";
+# Create a new directory and enter it
+mkd() {
+  mkdir -p -- "$1" && cd -- "$1"
 }
 
-# update everything (apt-get)
-function update_all() {
+# Update Debian/Ubuntu packages
+update_all() {
+  command -v apt-get >/dev/null 2>&1 || {
+    print -u2 'update_all requires apt-get'
+    return 1
+  }
+
   sudo apt-get update
   sudo apt-get upgrade -y
   sudo apt-get full-upgrade -y
-  sudo apt-get dist-upgrade -y
   sudo apt-get autoremove -y
   sudo apt-get autoclean -y
 }
-

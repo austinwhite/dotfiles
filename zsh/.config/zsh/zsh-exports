@@ -1,27 +1,38 @@
-# nvim config
+# General
 export NVIMCONFIG="$XDG_CONFIG_HOME/nvim"
 
-# deno
+# Language/tool homes
 export DENO_INSTALL="$HOME/.deno"
-
-# Java
-export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
-
-# PATH
-export PATH="$HOME/miniconda3/bin:$PATH"        # conda
-export PATH="/var/lib/snapd/snap/bin:$PATH"     # snap packages
-export PATH="$DENO_INSTALL/bin:$PATH"           # deno
-export PATH="/opt/android-studio/bin:$PATH"     # android dev tools
-export PATH="/opt/homebrew/bin:$PATH"       	  # homebrew
-export PATH="/opt/homebrew/opt:$PATH"         	# homebrew
-
-# node version manager
-#export NVM_DIR="$XDG_CONFIG_HOME/nvm"
-#  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-#  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# mac nvm
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+# Java / Android
+[[ -d /opt/homebrew/opt/openjdk@17 ]] && export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
+
+# PATH helpers
+path_prepend() {
+  [[ -d "$1" ]] || return
+  case ":$PATH:" in
+    *":$1:"*) ;;
+    *) export PATH="$1:$PATH" ;;
+  esac
+}
+
+path_prepend "$HOME/miniconda3/bin"
+path_prepend "/var/lib/snapd/snap/bin"
+path_prepend "$DENO_INSTALL/bin"
+path_prepend "/opt/android-studio/bin"
+path_prepend "/opt/homebrew/bin"
+path_prepend "/opt/homebrew/opt"
+path_prepend "$PNPM_HOME/bin"
+
+# nvm
+if [[ -s /opt/homebrew/opt/nvm/nvm.sh ]]; then
+  source /opt/homebrew/opt/nvm/nvm.sh
+elif [[ -s "$NVM_DIR/nvm.sh" ]]; then
+  source "$NVM_DIR/nvm.sh"
+fi
+
+[[ -s /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm ]] && source /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm
+
+unfunction path_prepend

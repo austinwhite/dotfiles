@@ -1,95 +1,68 @@
-eval "$(starship init zsh)"
+# Prompt
+command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
 
-# add zinit
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+# Plugins
+[[ -r "$ZDOTDIR/zsh-plugins" ]] && source "$ZDOTDIR/zsh-plugins"
 
-if [ ! -d "$ZINIT_HOME" ]; then
-   mkdir -p "$(dirname $ZINIT_HOME)"
-   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-fi
+# Completion
+autoload -Uz compinit
+compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
 
-source "${ZINIT_HOME}/zinit.zsh"
-
-# load completions
-autoload -Uz compinit && compinit -C
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-# plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light hlissner/zsh-autopair
-zinit light Aloxaf/fzf-tab
-
-# pull in oh-my-zsh plugins
-zinit snippet OMZP::sudo
-zinit snippet OMZP::aws
-zinit snippet OMZP::command-not-found
-
-zinit cdreplay -q
-
-# keybindings
+# Keybindings
 bindkey -e
-bindkey "^p" up-line-or-beginning-search
-bindkey "^n" down-line-or-beginning-search
+bindkey '^p' up-line-or-beginning-search
+bindkey '^n' down-line-or-beginning-search
 bindkey '^[w' kill-region
-bindkey '^H' backward-kill-word # ctrl+backspace, delete previous word
+bindkey '^H' backward-kill-word # ctrl+backspace: delete previous word
 
-# history
+# History
 HISTSIZE=5000
-HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
-HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
+HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/zsh/history"
+mkdir -p "${HISTFILE:h}"
+
+setopt append_history
+setopt share_history
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
-unsetopt BEEP
+unsetopt beep
 
-# completion styling
+# Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
+[[ -n "$LS_COLORS" ]] && zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color=auto $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color=auto $realpath'
 
-# add config externals
-[[ ! -f $ZDOTDIR/zsh-functions ]] || source $ZDOTDIR/zsh-functions
-[[ ! -f $ZDOTDIR/zsh-exports ]] || source $ZDOTDIR/zsh-exports
-[[ ! -f $ZDOTDIR/zsh-aliases ]] || source $ZDOTDIR/zsh-aliases
+# Local config modules
+for file in \
+  "$ZDOTDIR/zsh-functions" \
+  "$ZDOTDIR/zsh-exports" \
+  "$ZDOTDIR/zsh-aliases" \
+  "$ZDOTDIR/local.zsh"
+do
+  [[ -r "$file" ]] && source "$file"
+done
+unset file
 
-# shell integrations
- eval "$(fzf --zsh)"
-# must soruce fzf files manually. --zsh flag isn't supported on debian yet
-# source /usr/share/doc/fzf/examples/key-bindings.zsh
-# source /usr/share/doc/fzf/examples/completion.zsh
-# eval "$(zoxide init --cmd cd zsh)"
-eval "$(zoxide init bash)"
+# Shell integrations
+if command -v fzf >/dev/null 2>&1; then
+  eval "$(fzf --zsh)"
+fi
+
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
 
 tmux-window-name() {
-    if [[ -v TMUX ]]; then
-	    ($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
-    fi
+  if [[ -n "$TMUX" && -n "$TMUX_PLUGIN_MANAGER_PATH" ]]; then
+    "$TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py" &
+  fi
 }
-
-# pnpm
-export PNPM_HOME="/Users/austin/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-# rust
-source "$HOME/.cargo/env"
-
-
-export NVM_DIR="$HOME/.nvm"
-[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"

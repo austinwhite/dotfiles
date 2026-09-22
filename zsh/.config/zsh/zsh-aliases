@@ -1,31 +1,35 @@
-# steal the good ones form here: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
-
-# shortcuts
+# Shortcuts
 alias v='nvim'
 alias g='git'
 alias d='docker'
-alias projects='cd $HOME/Projects'
-alias dots='cd $DOTFILES'
+alias projects='cd "$HOME/Projects"'
+alias dots='cd "$DOTFILES"'
 
-# print each PATH entry on a seperate line
-alias path='echo -e ${PATH//:/\\n}'
+# Print each PATH entry on a separate line
+alias path='print -l ${(s.:.)PATH}'
 
 # ls
-alias ls='ls --color=auto'
-alias la='ls -a --color=auto'
-alias ll='ls -l --color=auto'
-alias lla='ls -la --color=auto'
-alias llrt='ls -lrt --color=auto'
+if ls --color=auto >/dev/null 2>&1; then
+  alias ls='ls --color=auto'
+  alias la='ls -a --color=auto'
+  alias ll='ls -l --color=auto'
+  alias lla='ls -la --color=auto'
+  alias llrt='ls -lrt --color=auto'
+else
+  alias la='ls -a'
+  alias ll='ls -l'
+  alias lla='ls -la'
+  alias llrt='ls -lrt'
+fi
 
-# quicker navigation 
+# Navigation
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias ~='cd ~'
 alias -- -='cd -'
 
-# colorize grep
+# Colorize grep
 alias grep='grep --color=auto'
 
-alias zshsource='source $DOTFILES/zsh/.config/zsh/.zshrc'
+alias zshsource='source "$ZDOTDIR/.zshrc"'
