@@ -31,6 +31,25 @@ return {
       },
     })
 
+    local border = {
+      { "╭", "NormalFloat" },
+      { "─", "NormalFloat" },
+      { "╮", "NormalFloat" },
+      { "│", "NormalFloat" },
+      { "╯", "NormalFloat" },
+      { "─", "NormalFloat" },
+      { "╰", "NormalFloat" },
+      { "│", "NormalFloat" },
+    }
+
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+      border = border,
+    })
+
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+      border = border,
+    })
+
     local capabilities = require("blink.cmp").get_lsp_capabilities()
 
     require("mason-lspconfig").setup({
@@ -66,7 +85,9 @@ return {
 
         map("gd", vim.lsp.buf.definition, "Go to definition")
         map("gr", vim.lsp.buf.references, "Go to references")
-        map("K", vim.lsp.buf.hover, "Hover documentation")
+        map("K", function()
+          vim.lsp.buf.hover({ border = border })
+        end, "Hover documentation")
         map("<leader>ca", vim.lsp.buf.code_action, "Code action")
         map("<leader>cr", vim.lsp.buf.rename, "Rename symbol")
       end,
