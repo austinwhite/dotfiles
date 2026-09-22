@@ -18,8 +18,8 @@ local config = {
 
 local appBindings = {
 	{ "1", "Ghostty" },
-	{ "2", "Google Chrome" },
-	-- { "3", "" },
+	{ "2", "Zed" },
+	{ "3", "Google Chrome" },
 	-- { "4", "" },
 	-- { "5", "" },
 	-- { "6", "" },

@@ -2,9 +2,6 @@
 *.zwc
 .zcompdump*
 
-# auto-installed by plugin manager
-plugins/
-
 # machine-local overrides
 local.zsh
 
@@ -12,5 +9,3 @@ local.zsh
 .DS_Store
 .zsh_sessions
 
-# installed plugins
-./plugins/

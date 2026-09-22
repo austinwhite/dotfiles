@@ -1,4 +1,4 @@
-PLUGIN_DIR="${ZDOTDIR:-$HOME/.config/zsh}/plugins"
+PLUGIN_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugins"
 
 plugin_load() {
   local repo="$1"
@@ -35,5 +35,4 @@ plugin_update() {
 plugin_load "zsh-users/zsh-completions" "zsh-completions.plugin.zsh"
 plugin_load "zsh-users/zsh-autosuggestions" "zsh-autosuggestions.zsh"
 plugin_load "hlissner/zsh-autopair" "autopair.zsh"
-plugin_load "Aloxaf/fzf-tab" "fzf-tab.plugin.zsh"
 plugin_load "zdharma-continuum/fast-syntax-highlighting" "fast-syntax-highlighting.plugin.zsh"

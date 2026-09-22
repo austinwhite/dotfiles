@@ -3,8 +3,15 @@ zcompdump="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
 mkdir -p "${zcompdump:h}"
 
 autoload -Uz compinit
-compinit -d "$zcompdump"
+if [[ -r "$zcompdump" ]]; then
+  compinit -C -d "$zcompdump"
+else
+  compinit -d "$zcompdump"
+fi
 unset zcompdump
+
+# Completion plugins that must load after compinit
+(( $+functions[plugin_load] )) && plugin_load "Aloxaf/fzf-tab" "fzf-tab.plugin.zsh"
 
 # Completion/search widgets
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
