@@ -3,6 +3,7 @@ return {
   dependencies = {
     "neovim/nvim-lspconfig",
     "mason-org/mason.nvim",
+    "saghen/blink.cmp",
     {
       "folke/lazydev.nvim",
       ft = "lua",
@@ -34,7 +35,7 @@ return {
 
     require("mason-lspconfig").setup({
       automatic_enable = {
-        -- rustaceanvim and typscript_tools manage these lsp's
+        -- rustaceanvim and typescript-tools manage these LSPs.
         exclude = { "rust_analyzer", "ts_ls" },
       },
       ensure_installed = {
@@ -56,6 +57,20 @@ return {
       [vim.diagnostic.severity.HINT] = "󰌶 ",
       [vim.diagnostic.severity.INFO] = " ",
     }
+
+    vim.api.nvim_create_autocmd("LspAttach", {
+      callback = function(args)
+        local map = function(lhs, rhs, desc)
+          vim.keymap.set("n", lhs, rhs, { buffer = args.buf, desc = desc })
+        end
+
+        map("gd", vim.lsp.buf.definition, "Go to definition")
+        map("gr", vim.lsp.buf.references, "Go to references")
+        map("K", vim.lsp.buf.hover, "Hover documentation")
+        map("<leader>ca", vim.lsp.buf.code_action, "Code action")
+        map("<leader>cr", vim.lsp.buf.rename, "Rename symbol")
+      end,
+    })
 
     vim.diagnostic.config({
       underline = false,

@@ -35,30 +35,35 @@ return {
       function()
         require("telescope.builtin").find_files(require("telescope.themes"))
       end,
+      desc = "Find files",
     },
     {
       "<leader>fb",
       function()
         require("telescope.builtin").buffers(require("telescope.themes"))
       end,
+      desc = "Find buffers",
     },
     {
       "<leader>fh",
       function()
         require("telescope.builtin").help_tags(require("telescope.themes"))
       end,
+      desc = "Find help",
     },
     {
       "<leader>fg",
       function()
         require("telescope.builtin").live_grep(require("telescope.themes"))
       end,
+      desc = "Live grep",
     },
     {
       "<leader>fs",
       function()
         require("telescope.builtin").lsp_document_symbols(require("telescope.themes"))
       end,
+      desc = "Find document symbols",
     },
   },
 }

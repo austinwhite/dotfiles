@@ -1,6 +1,7 @@
 return {
   "mrcjkb/rustaceanvim",
   version = "^6",
+  dependencies = { "saghen/blink.cmp" },
   ft = { "rust" },
   init = function()
     vim.g.rustaceanvim = {
