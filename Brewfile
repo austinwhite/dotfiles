@@ -15,6 +15,7 @@ brew "yazi"
 brew "ffmpeg-full"
 brew "yt-dlp"
 brew "colima"
+brew "coreutils"
 
 cask "vlc"
 cask "discord"
