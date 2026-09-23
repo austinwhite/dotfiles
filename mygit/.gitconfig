@@ -1,7 +1,6 @@
-[includeIf "gitdir:~/**/Projects/Personal/**"]
+[include]
     path = ~/.gitconfig-personal
-[includeIf "gitdir:~/.dotfiles/"]
-    path = ~/.gitconfig-personal
+
 [includeIf "gitdir:~/**/Projects/Futo/**"]
     path = ~/.gitconfig-futo
 [includeIf "gitdir:~/**/Projects/Modern/**"]
@@ -20,4 +19,3 @@
     st = status -sb
     df = diff
     lg = log --pretty=oneline -n 20 --graph --abbrev-commit
-
