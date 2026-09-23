@@ -1,5 +1,0 @@
-script spec
-projects dirs: create
-install fonts
-install brewfie
-stow configs
