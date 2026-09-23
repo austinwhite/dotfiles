@@ -11,17 +11,3 @@ path_prepend() {
 mkd() {
   mkdir -p -- "$1" && cd -- "$1"
 }
-
-# Update Debian/Ubuntu packages
-update_all() {
-  command -v apt-get >/dev/null 2>&1 || {
-    print -u2 'update_all requires apt-get'
-    return 1
-  }
-
-  sudo apt-get update
-  sudo apt-get upgrade -y
-  sudo apt-get full-upgrade -y
-  sudo apt-get autoremove -y
-  sudo apt-get autoclean -y
-}

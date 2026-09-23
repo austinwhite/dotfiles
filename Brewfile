@@ -11,6 +11,7 @@ brew "postgresql"
 brew "starship"
 brew "gitmux"
 brew "mise"
+brew "yazi"
 
 cask "vlc"
 cask "discord"
