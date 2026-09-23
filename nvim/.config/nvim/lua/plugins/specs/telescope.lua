@@ -118,7 +118,7 @@ return {
       desc = "Find keymaps",
     },
     {
-      "<leader>p",
+      "<C-p>",
       function()
         require("telescope.builtin").git_files()
       end,
