@@ -1,11 +1,5 @@
-# General
 export NVIMCONFIG="$XDG_CONFIG_HOME/nvim"
 
-# Language/tool homes
-export DENO_INSTALL="$HOME/.deno"
-export PNPM_HOME="$XDG_DATA_HOME/pnpm"
+export EDITOR="nvim"
 
-# User-level tools
-path_prepend "$DENO_INSTALL/bin"
-path_prepend "$PNPM_HOME/bin"
-path_prepend "$HOME/miniconda3/bin"
+export GPG_TTY=$(tty)
